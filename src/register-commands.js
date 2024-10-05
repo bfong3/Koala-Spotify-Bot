@@ -6,11 +6,59 @@ dotenv.config();
 const commands = [
     {
         name: 'hall_of_fame',
-        description: 'Our voted best songs every week',
+        description: 'Our most favorite song every week',
+        options: [
+            {
+                name: 'specify',
+                description: 'Display entire file or specific week',
+                type: ApplicationCommandOptionType.String, 
+                choices: [
+                    {
+                        name: 'All',
+                        value: 'all', 
+                    },
+                    {
+                        name: 'Week',
+                        value: 'week',
+                    },
+                ],
+                required: true, 
+            },
+            {
+                name: 'number',
+                description: 'Specific week number',
+                type: ApplicationCommandOptionType.Number,
+                required: false,
+            },
+        ],        
     },
     {
         name: 'hall_of_shame',
-        description: 'Our voted worst songs every week',
+        description: 'Our least favorite song every week',
+        options: [
+            {
+                name: 'specify',
+                description: 'Display entire file or specific week',
+                type: ApplicationCommandOptionType.String, 
+                choices: [
+                    {
+                        name: 'All',
+                        value: 'all', 
+                    },
+                    {
+                        name: 'Week',
+                        value: 'week',
+                    },
+                ],
+                required: true, 
+            },
+            {
+                name: 'number',
+                description: 'Specific week number',
+                type: ApplicationCommandOptionType.Number,
+                required: false,
+            },
+        ],    
     },
     {
         name: 'leaderboards',
@@ -18,7 +66,7 @@ const commands = [
         options: [
             {
                 name: 'category',
-                description: 'Pick what you wanna filter by',
+                description: 'Leaderboard of different categories',
                 type: ApplicationCommandOptionType.String,
                 required : true,
                 choices:[
@@ -45,12 +93,12 @@ const commands = [
     },
     {
         name: 'songs',
-        description: 'Songs added from user. /songs <user>',
+        description: 'Songs added from specified user',
         options: [
             {
                 name: 'username',
                 description: 'the user',
-                type: ApplicationCommandOptionType.User,
+                type: ApplicationCommandOptionType.User, // Ensure this type is defined in your version
                 required: true,
             },
         ],
@@ -62,10 +110,14 @@ const rest = new REST({ version : '10'}).setToken(process.env.DISCORD_BOT_TOKEN)
 (async () => {
     try {
         console.log('Registering slash commands...');
-        await rest.put(
-            Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
-            {body: commands}
-        );
+
+        const guildIds = [process.env.GUILD_ID_1, process.env.GUILD_ID_2];
+        for (const guildId of guildIds) {
+            await rest.put(
+                Routes.applicationGuildCommands(process.env.CLIENT_ID, guildId),
+                { body: commands }
+            );
+        }
         console.log('Slash commands were registered successfully!');
     } catch (error) {
         console.log(`There was an error: ${error}`);
