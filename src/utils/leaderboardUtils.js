@@ -1,6 +1,6 @@
-import { SongsFromUser } from './spotifyUtils.js';
+import { songsFromUser } from './spotifyUtils.js';
 
-const formatDuration = (seconds) => {
+const convertSecondsToMinutes = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainderSeconds = seconds % 60;
     return `${minutes}:${remainderSeconds.toString().padStart(2, '0')}`;
@@ -18,23 +18,22 @@ const calculateAverage = (list, category) => {
     return parseFloat((total / list.length).toFixed(1));
 };
 
-export const calculateCurrentWeek = (ID_DICTIONARY, playlist_JSON) => {
-    let totalSongs = playlist_JSON.length;
-    const totalUsers = Object.keys(ID_DICTIONARY).length;
+export const calculateCurrentWeek = (DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST) => {
+    const totalUsers = Object.keys(DISCORD_ID_DICTIONARY).length;
+    let totalSongs = ENTIRE_PLAYLIST.length;
 
     //Added 3 songs per user during first week, every other week is 1
     totalSongs -= (totalUsers * 2);
-    let currentWeek = Math.ceil(totalSongs / totalUsers);
+    const currentWeek = Math.ceil(totalSongs / totalUsers);
     return currentWeek;
 }
 
-export const sortedSongs = (category, ID_DICTIONARY, playlist_JSON) => {
-    const scores = [];
+export const sortedByCategorySongs = (category, DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST) => {
+    const userStats = [];
 
-    for (const discordId in ID_DICTIONARY) {
-        const realName = ID_DICTIONARY[discordId].realName;
-        const sortedList = SongsFromUser(discordId, ID_DICTIONARY, playlist_JSON);
-
+    for (const discordID in DISCORD_ID_DICTIONARY) {
+        const realName = DISCORD_ID_DICTIONARY[discordID].realName;
+        const sortedList = songsFromUser(discordID, DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST);
         let score = 0; 
 
         // Handle different categories
@@ -43,51 +42,51 @@ export const sortedSongs = (category, ID_DICTIONARY, playlist_JSON) => {
             score = calculateAverage(sortedList, category);
 
             if (category === 'duration') {
-                displayScore = formatDuration(Math.floor(score));
+                displayScore = convertSecondsToMinutes(Math.floor(score));
             }
 
-            scores.push({ name: realName, score, displayScore });
+            userStats.push({ name: realName, score, displayScore });
         } else if (category === 'added') {
-            scores.push({ name: realName, score: sortedList.length });
+            userStats.push({ name: realName, score: sortedList.length });
         } else {
             const popularityScore = calculateAverage(sortedList, 'popularity');
-            const durationScore = formatDuration(Math.floor(calculateAverage(sortedList, 'duration')));
-            scores.push({
+            const durationScore = convertSecondsToMinutes(Math.floor(calculateAverage(sortedList, 'duration')));
+            userStats.push({
                 name: realName,
-                songs_added: sortedList.length,
-                duration: durationScore,
-                popularity: popularityScore
+                songsCount: sortedList.length,
+                songDuration: durationScore,
+                songPopularity: popularityScore
             });
         }
     }
 
-    scores.sort((a, b) => {
+    userStats.sort((a, b) => {
         if (category === 'added') return b.score - a.score; // For 'added' category, sort by the number of songs
         if (category === 'popularity' || category === 'duration') {
             return b.score === a.score ? a.name.localeCompare(b.name) : b.score - a.score;
         }
     });
-    return scores;
+    return userStats;
 };
 
-export function printSongsFromUser(interaction, ID_DICTIONARY, playlist_JSON) {
+export function printSongsFromUser(interaction, DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST) {
     const userDetails = interaction.options.get('username');
-    const discordId = userDetails.user.id;
+    const discordID = userDetails.user.id;
 
-    if (!ID_DICTIONARY.hasOwnProperty(discordId)) {
+    if (!DISCORD_ID_DICTIONARY.hasOwnProperty(discordID)) {
         interaction.reply(`**${userDetails.user.username}** is not part of the Spotify playlist.\n`);
         return;
     }
 
-    const realName = ID_DICTIONARY[discordId].realName;
-    const sortedList = SongsFromUser(discordId, ID_DICTIONARY, playlist_JSON);
-    let replyMessage = songsReplyMessage(realName, sortedList);
+    const realName = DISCORD_ID_DICTIONARY[discordID].realName;
+    const sortedList = songsFromUser(discordID, DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST);
+    let replyMessage = songsFromUserReplyMessage(realName, sortedList);
 
-    // Send the reply
     interaction.reply(replyMessage);
 }
 
-function songsReplyMessage(realName, sortedList) {
+//String for all the songs added by user
+function songsFromUserReplyMessage(realName, sortedList) {
     let replyMessage = `**Songs from ${realName}:**\n`;
     replyMessage += "```"; 
     replyMessage += `| No. | Song Title                                         | Date Added  | Song Popularity |\n`;
@@ -97,21 +96,21 @@ function songsReplyMessage(realName, sortedList) {
         let song_name = entry.track.name;
         const dateAdded = entry.added_at; 
         const formattedDate = new Date(dateAdded).toLocaleDateString(); // Format the date
-        const popularity = entry.track.popularity;
+        const songPopularity = entry.track.popularity;
 
-        const maxTitleLength = 47;
+        const maxTitleLength = 47; //Adjust to whatever cutoff you want 
         if (song_name.length > maxTitleLength) {
             song_name = song_name.slice(0, maxTitleLength - 3) + '...';
         }
 
-        replyMessage += `| ${String(index + 1).padEnd(3)} | ${song_name.padEnd(50)} | ${formattedDate.padEnd(11)} | ${popularity.toString().padEnd(15)} |\n`;
+        replyMessage += `| ${String(index + 1).padEnd(3)} | ${song_name.padEnd(50)} | ${formattedDate.padEnd(11)} | ${songPopularity.toString().padEnd(15)} |\n`;
     });
 
     replyMessage += "```";
     return replyMessage;
 }
 
-export const displayLeaderboard = async (interaction, option, scores) => {
+export const displayLeaderboard = async (interaction, option, userStats) => {
     let replyMessage = '';
 
     switch (option) {
@@ -119,7 +118,7 @@ export const displayLeaderboard = async (interaction, option, scores) => {
             replyMessage = `**Everyone's Average Song Popularity:**\n`;
             replyMessage += `*(The popularity of a track is a value between 0 and 100, with 100 being the most popular)*\n`;
             replyMessage += "```\n| Name          | Song Popularity |\n| ------------- | --------------- |\n";
-            scores.forEach(({ name, score }) => {
+            userStats.forEach(({ name, score }) => {
                 replyMessage += `| ${name.padEnd(13)} | ${score.toString().padEnd(15)} |\n`;
             });
             break;
@@ -127,7 +126,7 @@ export const displayLeaderboard = async (interaction, option, scores) => {
         case 'duration':
             replyMessage = `**Everyone's Average Song Length (in seconds):**\n`;
             replyMessage += "```\n| Name          | Avg Song Length |\n| ------------- | --------------- |\n";
-            scores.forEach(({ name, displayScore }) => {
+            userStats.forEach(({ name, displayScore }) => {
                 replyMessage += `| ${name.padEnd(13)} | ${displayScore.toString().padEnd(15)} |\n`;
             });
             break;
@@ -135,7 +134,7 @@ export const displayLeaderboard = async (interaction, option, scores) => {
         case 'added':
             replyMessage = `**Everyone's Number of Added Songs:**\n`;
             replyMessage += "```\n| Name          | Songs Added |\n| ------------- | ----------- |\n";
-            scores.forEach(({ name, score }) => {
+            userStats.forEach(({ name, score }) => {
                 replyMessage += `| ${name.padEnd(13)} | ${score.toString().padEnd(11)} |\n`;
             });
             break;
@@ -143,8 +142,8 @@ export const displayLeaderboard = async (interaction, option, scores) => {
         default:
             replyMessage = `**Overall Leaderboard:**\n`;
             replyMessage += "```\n| Name          | Songs Added | Avg Song Length | Song Popularity |\n| ------------- | ----------- | --------------- | --------------- |\n";
-            scores.forEach(({ name, songs_added, duration, popularity }) => {
-                replyMessage += `| ${name.padEnd(13)} | ${songs_added.toString().padEnd(11)} | ${duration.toString().padEnd(15)} | ${popularity.toString().padEnd(15)} |\n`;
+            userStats.forEach(({ name, songsCount, songDuration, songPopularity }) => {
+                replyMessage += `| ${name.padEnd(13)} | ${songsCount.toString().padEnd(11)} | ${songDuration.toString().padEnd(15)} | ${songPopularity.toString().padEnd(15)} |\n`;
             });
             break;
     }

@@ -1,11 +1,11 @@
 import dotenv from 'dotenv'; 
 import * as utils from './utils/index.js';
 import { getPlaylistData } from './Spotify Code/app.js';
-import { Client, IntentsBitField } from 'discord.js';
+import { Client, IntentsBitField, InteractionResponse } from 'discord.js';
 
 dotenv.config();
 
-const ID_DICTIONARY = {
+const DISCORD_ID_DICTIONARY = {
     '153668556934873089': { realName: 'Austin', spotifyId: 'hvusf4hnl8efw64698yoaiiar' },
     '168519409504223232': { realName: 'Brandan', spotifyId: 'wolfhunter76' },
     '166248299014258688': { realName: 'Chris', spotifyId: '21wwnjg7kgtxz2utci2gjjcea' },
@@ -24,6 +24,8 @@ const ID_DICTIONARY = {
     '143083192159698944': { realName: 'Zhao', spotifyId: 'bb3amt8y4jl2pakk857soxwly' }
 };
 
+const ENTIRE_PLAYLIST = await getPlaylistData();
+
 const client = new Client({intents: [
     IntentsBitField.Flags.Guilds,
     IntentsBitField.Flags.GuildMembers,
@@ -31,29 +33,32 @@ const client = new Client({intents: [
 ],
 });
 
-let playlist_JSON;
-
 client.on('ready', async (c) => {
     console.log(`${c.user.tag} is ready.`);
-    playlist_JSON = await getPlaylistData()
 });
 
 client.on('interactionCreate', async (interaction) =>{
     if(!interaction.isChatInputCommand()) return;
 
     if(interaction.commandName === 'songs'){
-        utils.printSongsFromUser(interaction, ID_DICTIONARY, playlist_JSON);
+        utils.printSongsFromUser(interaction, DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST);
     }
     if (interaction.commandName === 'leaderboards') {
-        const option = interaction.options.get('category').value;
-        const scores = await utils.sortedSongs(option, ID_DICTIONARY, playlist_JSON);
-        await utils.displayLeaderboard(interaction, option, scores);
+        const selectedCategory = interaction.options.get('category').value;
+        const scores = utils.sortedByCategorySongs(selectedCategory, DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST);
+        await utils.displayLeaderboard(interaction, selectedCategory, scores);
     }
     if(interaction.commandName === 'hall_of_fame' || interaction.commandName === 'hall_of_shame'){
-        const currentWeek = utils.calculateCurrentWeek(ID_DICTIONARY, playlist_JSON)
-        //const currentWeek = 3;
-        utils.displayFileContents(interaction, interaction.commandName, currentWeek);
+        const currentWeekNumber = utils.calculateCurrentWeek(DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST);
+        utils.displayFileContents(interaction, interaction.commandName, currentWeekNumber);
+    }
+    if(interaction.commandName === 'missing'){
+        const currentWeekNumber = utils.calculateCurrentWeek(DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST);
+        const latestWinnerDiscordID = await utils.getLatestWinnerDiscordID(interaction, currentWeekNumber - 1, DISCORD_ID_DICTIONARY, currentWeekNumber);
+        utils.replyAllMissingSongs(interaction, latestWinnerDiscordID, DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST);
     }
 })
 
 client.login(process.env.DISCORD_BOT_TOKEN);
+
+export { ENTIRE_PLAYLIST };

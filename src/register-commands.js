@@ -103,6 +103,10 @@ const commands = [
             },
         ],
     },
+    {
+        name: 'missing',
+        description: 'Check missing songs this week',
+    },
 ];
 
 const rest = new REST({ version : '10'}).setToken(process.env.DISCORD_BOT_TOKEN);
@@ -111,7 +115,7 @@ const rest = new REST({ version : '10'}).setToken(process.env.DISCORD_BOT_TOKEN)
     try {
         console.log('Registering slash commands...');
 
-        const guildIds = [process.env.GUILD_ID_1, process.env.GUILD_ID_2];
+        const guildIds = [process.env.MYSERVER_GUILD_ID, process.env.KOALA_GUILD_ID];
         for (const guildId of guildIds) {
             await rest.put(
                 Routes.applicationGuildCommands(process.env.CLIENT_ID, guildId),
