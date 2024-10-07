@@ -3,11 +3,13 @@ import fetch from 'node-fetch';
 
 // Load environment variables from .env file
 dotenv.config();
+const TOKEN_URL = 'https://accounts.spotify.com/api/token';
+const PLAYLIST_ITEM_LIMIT = 100;
 
 const _getToken = async () => {
     const clientId = process.env.SPOTIFY_CLIENT_ID;
     const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
-    const result = await fetch('https://accounts.spotify.com/api/token', {
+    const result = await fetch(TOKEN_URL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -21,7 +23,7 @@ const _getToken = async () => {
 };
 
 const _getPlaylistItems = async (token, playlistId) => {
-    const limit = 100; // Max items per request
+    const limit = PLAYLIST_ITEM_LIMIT; // Max items per request
     let allItems = []; // Store all items
     let offset = 0; // Pagination offset
     let fields = 'items(added_at, added_by(id), track(name, popularity, artists(name), duration_ms))';
