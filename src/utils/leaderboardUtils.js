@@ -1,4 +1,4 @@
-import { songsFromUser } from './spotifyUtils.js';
+import { songsFromUser } from './storedSongsUtils.js';
 
 const convertSecondsToMinutes = (seconds) => {
     const minutes = Math.floor(seconds / 60);
@@ -18,22 +18,13 @@ const calculateAverage = (list, category) => {
     return parseFloat((total / list.length).toFixed(1));
 };
 
-export const calculateCurrentWeek = (DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST) => {
-    const totalUsers = Object.keys(DISCORD_ID_DICTIONARY).length;
-    let totalSongs = ENTIRE_PLAYLIST.length;
 
-    //Added 3 songs per user during first week, every other week is 1
-    totalSongs -= (totalUsers * 2);
-    const currentWeek = Math.ceil(totalSongs / totalUsers);
-    return currentWeek;
-}
-
-export const sortedByCategorySongs = (category, DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST) => {
+export const sortedByCategorySongs = (category, DISCORD_ID_DICTIONARY, entirePlaylist) => {
     const userStats = [];
 
     for (const discordID in DISCORD_ID_DICTIONARY) {
         const realName = DISCORD_ID_DICTIONARY[discordID].realName;
-        const sortedList = songsFromUser(discordID, DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST);
+        const sortedList = songsFromUser(discordID, entirePlaylist);
         let score = 0; 
 
         // Handle different categories
@@ -69,7 +60,7 @@ export const sortedByCategorySongs = (category, DISCORD_ID_DICTIONARY, ENTIRE_PL
     return userStats;
 };
 
-export function printSongsFromUser(interaction, DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST) {
+export function printSongsFromUser(interaction, DISCORD_ID_DICTIONARY, entirePlaylist) {
     const userDetails = interaction.options.get('username');
     const discordID = userDetails.user.id;
 
@@ -79,7 +70,7 @@ export function printSongsFromUser(interaction, DISCORD_ID_DICTIONARY, ENTIRE_PL
     }
 
     const realName = DISCORD_ID_DICTIONARY[discordID].realName;
-    const sortedList = songsFromUser(discordID, DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST);
+    const sortedList = songsFromUser(discordID, entirePlaylist);
     let replyMessage = songsFromUserReplyMessage(realName, sortedList);
 
     interaction.reply(replyMessage);

@@ -1,0 +1,1529 @@
+{
+  "153668556934873089": {
+    "songs": [
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "TV Girl"
+                }
+              ],
+              "duration_ms": 213760,
+              "name": "Hate Yourself",
+              "uri": "spotify:track:7ijyGfG4NxMBobHgvu4lIM",
+              "popularity": 65
+            },
+            "added_by": {
+              "id": "hvusf4hnl8efw64698yoaiiar"
+            },
+            "added_at": "2024-10-02T03:04:43Z"
+          },
+          "vote": false
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "bbno$"
+                },
+                {
+                  "name": "lentra"
+                }
+              ],
+              "duration_ms": 146285,
+              "name": "nursery",
+              "uri": "spotify:track:2napy7uG4RI74SoyKJVGl5",
+              "popularity": 52
+            },
+            "added_by": {
+              "id": "hvusf4hnl8efw64698yoaiiar"
+            },
+            "added_at": "2024-10-02T03:08:42Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "eaJ"
+                }
+              ],
+              "duration_ms": 93520,
+              "name": "pacman",
+              "uri": "spotify:track:4nbofXfYHejWJbJcxSLQXc",
+              "popularity": 53
+            },
+            "added_by": {
+              "id": "hvusf4hnl8efw64698yoaiiar"
+            },
+            "added_at": "2024-10-02T23:14:44Z"
+          },
+          "vote": null
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "wave to earth"
+                }
+              ],
+              "duration_ms": 307750,
+              "name": "love.",
+              "uri": "spotify:track:5rDXfGMWI6S8wkXR0MHsvv",
+              "popularity": 77
+            },
+            "added_by": {
+              "id": "hvusf4hnl8efw64698yoaiiar"
+            },
+            "added_at": "2024-10-09T18:49:29Z"
+          },
+          "vote": null
+        }
+      ]
+    ]
+  },
+  "168519409504223232": {
+    "songs": [
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Kanye West"
+                }
+              ],
+              "duration_ms": 135920,
+              "name": "Father Stretch My Hands Pt. 1",
+              "uri": "spotify:track:4KW1lqgSr8TKrvBII0Brf8",
+              "popularity": 83
+            },
+            "added_by": {
+              "id": "wolfhunter76"
+            },
+            "added_at": "2024-10-02T01:01:44Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Tyler, The Creator"
+                },
+                {
+                  "name": "Kali Uchis"
+                }
+              ],
+              "duration_ms": 180386,
+              "name": "See You Again (feat. Kali Uchis)",
+              "uri": "spotify:track:7KA4W4McWYRpgf0fWsJZWB",
+              "popularity": 89
+            },
+            "added_by": {
+              "id": "wolfhunter76"
+            },
+            "added_at": "2024-10-02T03:25:18Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Frank Ocean"
+                }
+              ],
+              "duration_ms": 234093,
+              "name": "Lost",
+              "uri": "spotify:track:3GZD6HmiNUhxXYf8Gch723",
+              "popularity": 81
+            },
+            "added_by": {
+              "id": "wolfhunter76"
+            },
+            "added_at": "2024-10-02T03:25:25Z"
+          },
+          "vote": null
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Rex Orange County"
+                }
+              ],
+              "duration_ms": 181506,
+              "name": "THE SHADE",
+              "uri": "spotify:track:1gH1h30wkQdd9zhY3j7a8T",
+              "popularity": 74
+            },
+            "added_by": {
+              "id": "wolfhunter76"
+            },
+            "added_at": "2024-10-09T20:57:43Z"
+          },
+          "vote": null
+        }
+      ]
+    ]
+  },
+  "166248299014258688": {
+    "songs": [
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Seven Lions"
+                },
+                {
+                  "name": "Dabin"
+                },
+                {
+                  "name": "JIM"
+                }
+              ],
+              "duration_ms": 209302,
+              "name": "Ones I Used To Love",
+              "uri": "spotify:track:1roWNMBhbOCqcZSFJ6Oky4",
+              "popularity": 53
+            },
+            "added_by": {
+              "id": "21wwnjg7kgtxz2utci2gjjcea"
+            },
+            "added_at": "2024-10-02T02:56:42Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "ISOKNOCK"
+                },
+                {
+                  "name": "ISOxo"
+                },
+                {
+                  "name": "Knock2"
+                },
+                {
+                  "name": "cade clair"
+                }
+              ],
+              "duration_ms": 195428,
+              "name": "4EVR",
+              "uri": "spotify:track:2A3eCsmsW5ztqItagBLCVP",
+              "popularity": 52
+            },
+            "added_by": {
+              "id": "21wwnjg7kgtxz2utci2gjjcea"
+            },
+            "added_at": "2024-10-02T02:56:48Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Adventure Club"
+                },
+                {
+                  "name": "Codeko"
+                }
+              ],
+              "duration_ms": 202758,
+              "name": "Feels Like You",
+              "uri": "spotify:track:0F1VAVqj021UkGntiDz4nx",
+              "popularity": 50
+            },
+            "added_by": {
+              "id": "21wwnjg7kgtxz2utci2gjjcea"
+            },
+            "added_at": "2024-10-02T02:55:24Z"
+          },
+          "vote": null
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "ill Nicky"
+                },
+                {
+                  "name": "Jared Anthony"
+                },
+                {
+                  "name": "Cheeba Hawk"
+                },
+                {
+                  "name": "BangerOfTheDay"
+                }
+              ],
+              "duration_ms": 186153,
+              "name": "Photograph",
+              "uri": "spotify:track:6ut2gx43omNE2zchw86KSt",
+              "popularity": 1
+            },
+            "added_by": {
+              "id": "21wwnjg7kgtxz2utci2gjjcea"
+            },
+            "added_at": "2024-10-09T03:52:10Z"
+          },
+          "vote": null
+        }
+      ]
+    ]
+  },
+  "185149371149582336": {
+    "songs": [
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "The Killers"
+                }
+              ],
+              "duration_ms": 222973,
+              "name": "Mr. Brightside",
+              "uri": "spotify:track:003vvx7Niy0yvhvHt4a68B",
+              "popularity": 86
+            },
+            "added_by": {
+              "id": "ymsah78fe0gdg36j00seehr98"
+            },
+            "added_at": "2024-10-02T00:31:22Z"
+          },
+          "vote": true
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Kendrick Lamar"
+                },
+                {
+                  "name": "SZA"
+                }
+              ],
+              "duration_ms": 232186,
+              "name": "All The Stars (with SZA)",
+              "uri": "spotify:track:3GCdLUSnKSMJhs4Tj6CV3s",
+              "popularity": 86
+            },
+            "added_by": {
+              "id": "ymsah78fe0gdg36j00seehr98"
+            },
+            "added_at": "2024-10-02T02:23:36Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Chase Atlantic"
+                },
+                {
+                  "name": "GOON DES GARCONS*"
+                }
+              ],
+              "duration_ms": 267920,
+              "name": "Consume (feat. Goon Des Garcons)",
+              "uri": "spotify:track:0X2bh8NVQ8svDQIn2AdCbW",
+              "popularity": 77
+            },
+            "added_by": {
+              "id": "ymsah78fe0gdg36j00seehr98"
+            },
+            "added_at": "2024-10-02T02:33:10Z"
+          },
+          "vote": null
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Zedd"
+                },
+                {
+                  "name": "Foxes"
+                }
+              ],
+              "duration_ms": 271426,
+              "name": "Clarity",
+              "uri": "spotify:track:60wwxj6Dd9NJlirf84wr2c",
+              "popularity": 73
+            },
+            "added_by": {
+              "id": "ymsah78fe0gdg36j00seehr98"
+            },
+            "added_at": "2024-10-09T03:47:16Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Fetty Wap"
+                },
+                {
+                  "name": "Remy Boyz"
+                }
+              ],
+              "duration_ms": 196693,
+              "name": "679 (feat. Remy Boyz)",
+              "uri": "spotify:track:5NQbUaeTEOGdD6hHcre0dZ",
+              "popularity": 72
+            },
+            "added_by": {
+              "id": "ymsah78fe0gdg36j00seehr98"
+            },
+            "added_at": "2024-10-09T04:26:40Z"
+          },
+          "vote": null
+        }
+      ]
+    ]
+  },
+  "153662800609148928": {
+    "songs": [
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "mgk"
+                },
+                {
+                  "name": "WILLOW"
+                }
+              ],
+              "duration_ms": 159096,
+              "name": "emo girl (feat. WILLOW)",
+              "uri": "spotify:track:3tBZ60j1jQ7NJm8IjelyQe",
+              "popularity": 62
+            },
+            "added_by": {
+              "id": "22cytkqxyrwww2wrj3y6f7xpq"
+            },
+            "added_at": "2024-10-02T03:35:25Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Unlike Pluto"
+                },
+                {
+                  "name": "Mike Taylor"
+                }
+              ],
+              "duration_ms": 228979,
+              "name": "Everything Black",
+              "uri": "spotify:track:3UEnF6y5tyHVtMzldS3svp",
+              "popularity": 68
+            },
+            "added_by": {
+              "id": "22cytkqxyrwww2wrj3y6f7xpq"
+            },
+            "added_at": "2024-10-02T03:38:50Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "My Chemical Romance"
+                }
+              ],
+              "duration_ms": 311106,
+              "name": "Welcome to the Black Parade",
+              "uri": "spotify:track:5wQnmLuC1W7ATsArWACrgW",
+              "popularity": 76
+            },
+            "added_by": {
+              "id": "22cytkqxyrwww2wrj3y6f7xpq"
+            },
+            "added_at": "2024-10-02T03:39:02Z"
+          },
+          "vote": null
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Linkin Park"
+                }
+              ],
+              "duration_ms": 190427,
+              "name": "The Emptiness Machine",
+              "uri": "spotify:track:2PnlsTsOTLE5jnBnNe2K0A",
+              "popularity": 92
+            },
+            "added_by": {
+              "id": "22cytkqxyrwww2wrj3y6f7xpq"
+            },
+            "added_at": "2024-10-09T03:45:45Z"
+          },
+          "vote": null
+        }
+      ]
+    ]
+  },
+  "145988945585373184": {
+    "songs": [
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Post Malone"
+                },
+                {
+                  "name": "Doja Cat"
+                }
+              ],
+              "duration_ms": 192840,
+              "name": "I Like You (A Happier Song) (with Doja Cat)",
+              "uri": "spotify:track:0O6u0VJ46W86TxN9wgyqDj",
+              "popularity": 76
+            },
+            "added_by": {
+              "id": "oglenny"
+            },
+            "added_at": "2024-10-02T01:20:28Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Justin Bieber"
+                },
+                {
+                  "name": "Quavo"
+                }
+              ],
+              "duration_ms": 212866,
+              "name": "Intentions (feat. Quavo)",
+              "uri": "spotify:track:4umIPjkehX1r7uhmGvXiSV",
+              "popularity": 74
+            },
+            "added_by": {
+              "id": "oglenny"
+            },
+            "added_at": "2024-10-02T02:34:31Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Post Malone"
+                }
+              ],
+              "duration_ms": 215280,
+              "name": "Circles",
+              "uri": "spotify:track:21jGcNKet2qwijlDFuPiPb",
+              "popularity": 84
+            },
+            "added_by": {
+              "id": "oglenny"
+            },
+            "added_at": "2024-10-02T02:34:49Z"
+          },
+          "vote": null
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "MAX"
+                },
+                {
+                  "name": "HUH YUNJIN"
+                }
+              ],
+              "duration_ms": 173336,
+              "name": "STUPID IN LOVE (feat. HUH YUNJIN of LE SSERAFIM)",
+              "uri": "spotify:track:3W2kGv8CcwRl2MWQN5vxKL",
+              "popularity": 69
+            },
+            "added_by": {
+              "id": "oglenny"
+            },
+            "added_at": "2024-10-09T03:51:08Z"
+          },
+          "vote": null
+        }
+      ]
+    ]
+  },
+  "221448942230044674": {
+    "songs": [
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Travis Scott"
+                },
+                {
+                  "name": "Playboi Carti"
+                }
+              ],
+              "duration_ms": 191700,
+              "name": "FE!N (feat. Playboi Carti)",
+              "uri": "spotify:track:42VsgItocQwOQC3XWZ8JNA",
+              "popularity": 89
+            },
+            "added_by": {
+              "id": "franklinsss121"
+            },
+            "added_at": "2024-10-02T01:55:48Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "The Kid LAROI"
+                },
+                {
+                  "name": "Justin Bieber"
+                }
+              ],
+              "duration_ms": 141805,
+              "name": "STAY (with Justin Bieber)",
+              "uri": "spotify:track:5HCyWlXZPP0y6Gqq8TgA20",
+              "popularity": 79
+            },
+            "added_by": {
+              "id": "franklinsss121"
+            },
+            "added_at": "2024-10-02T02:23:32Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Maroon 5"
+                },
+                {
+                  "name": "Wiz Khalifa"
+                }
+              ],
+              "duration_ms": 231386,
+              "name": "Payphone",
+              "uri": "spotify:track:1LmN9SSHISbtp9LoaR5ZVJ",
+              "popularity": 65
+            },
+            "added_by": {
+              "id": "franklinsss121"
+            },
+            "added_at": "2024-10-02T02:51:43Z"
+          },
+          "vote": null
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Naughty Boy"
+                },
+                {
+                  "name": "Sam Smith"
+                }
+              ],
+              "duration_ms": 222200,
+              "name": "La La La",
+              "uri": "spotify:track:36pLU2ywVeBKEF0rrKtmCB",
+              "popularity": 61
+            },
+            "added_by": {
+              "id": "franklinsss121"
+            },
+            "added_at": "2024-10-09T04:55:11Z"
+          },
+          "vote": null
+        }
+      ]
+    ]
+  },
+  "168499897358614530": {
+    "songs": [
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Kanye West"
+                }
+              ],
+              "duration_ms": 299613,
+              "name": "All Of The Lights",
+              "uri": "spotify:track:22L7bfCiAkJo5xGSQgmiIO",
+              "popularity": 77
+            },
+            "added_by": {
+              "id": "12171960076"
+            },
+            "added_at": "2024-10-02T00:38:36Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Kanye West"
+                },
+                {
+                  "name": "Syleena Johnson"
+                }
+              ],
+              "duration_ms": 223506,
+              "name": "All Falls Down",
+              "uri": "spotify:track:5SkRLpaGtvYPhw02vZhQQ9",
+              "popularity": 81
+            },
+            "added_by": {
+              "id": "12171960076"
+            },
+            "added_at": "2024-10-02T02:22:21Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Kanye West"
+                },
+                {
+                  "name": "Dwele"
+                }
+              ],
+              "duration_ms": 237506,
+              "name": "Flashing Lights",
+              "uri": "spotify:track:5TRPicyLGbAF2LGBFbHGvO",
+              "popularity": 83
+            },
+            "added_by": {
+              "id": "12171960076"
+            },
+            "added_at": "2024-10-02T02:22:34Z"
+          },
+          "vote": null
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Brent Faiyaz"
+                }
+              ],
+              "duration_ms": 223629,
+              "name": "Been Away",
+              "uri": "spotify:track:5PvVkf1Yuq3XyMqqjPiKPd",
+              "popularity": 75
+            },
+            "added_by": {
+              "id": "12171960076"
+            },
+            "added_at": "2024-10-09T04:04:29Z"
+          },
+          "vote": null
+        }
+      ]
+    ]
+  },
+  "175424644977917953": {
+    "songs": [
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Kendrick Lamar"
+                },
+                {
+                  "name": "Blxst"
+                },
+                {
+                  "name": "Amanda Reifer"
+                }
+              ],
+              "duration_ms": 239026,
+              "name": "Die Hard",
+              "uri": "spotify:track:2g6tReTlM2Akp41g0HaeXN",
+              "popularity": 73
+            },
+            "added_by": {
+              "id": "12166240208"
+            },
+            "added_at": "2024-10-02T00:36:10Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "The Weeknd"
+                },
+                {
+                  "name": "Playboi Carti"
+                }
+              ],
+              "duration_ms": 256000,
+              "name": "Timeless (with Playboi Carti)",
+              "uri": "spotify:track:1Es7AUAhQvapIcoh3qMKDL",
+              "popularity": 90
+            },
+            "added_by": {
+              "id": "12166240208"
+            },
+            "added_at": "2024-10-02T02:23:27Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "PinkPantheress"
+                }
+              ],
+              "duration_ms": 98544,
+              "name": "Pain",
+              "uri": "spotify:track:4S4QJfBGGrC8jRIjJHf1Ka",
+              "popularity": 83
+            },
+            "added_by": {
+              "id": "12166240208"
+            },
+            "added_at": "2024-10-02T02:42:24Z"
+          },
+          "vote": null
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Phoenix"
+                }
+              ],
+              "duration_ms": 193106,
+              "name": "1901",
+              "uri": "spotify:track:1Ug5wxoHthwxctyWTUMGta",
+              "popularity": 71
+            },
+            "added_by": {
+              "id": "12166240208"
+            },
+            "added_at": "2024-10-09T03:50:00Z"
+          },
+          "vote": null
+        }
+      ]
+    ]
+  },
+  "178319927646617601": {
+    "songs": [
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Baby Keem"
+                }
+              ],
+              "duration_ms": 156774,
+              "name": "hooligan",
+              "uri": "spotify:track:5zEsv2Uz9r7J5pGpCRdeTx",
+              "popularity": 46
+            },
+            "added_by": {
+              "id": "yqzwz048uvd4wimtoyy74bd57"
+            },
+            "added_at": "2024-10-02T00:55:39Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "The Strokes"
+                }
+              ],
+              "duration_ms": 153133,
+              "name": "12:51",
+              "uri": "spotify:track:6Yu1OL8I0D4vjOzYdsXYGK",
+              "popularity": 64
+            },
+            "added_by": {
+              "id": "yqzwz048uvd4wimtoyy74bd57"
+            },
+            "added_at": "2024-10-02T09:11:55Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "salute"
+                },
+                {
+                  "name": "piri"
+                }
+              ],
+              "duration_ms": 160440,
+              "name": "luv stuck",
+              "uri": "spotify:track:01dN3BpfEFTWDlKvP4wD2l",
+              "popularity": 48
+            },
+            "added_by": {
+              "id": "yqzwz048uvd4wimtoyy74bd57"
+            },
+            "added_at": "2024-10-02T09:16:24Z"
+          },
+          "vote": null
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Origami Angel"
+                }
+              ],
+              "duration_ms": 182554,
+              "name": "Skeleton Key",
+              "uri": "spotify:track:3K9a6cp22vv8LLiS2IgjnN",
+              "popularity": 46
+            },
+            "added_by": {
+              "id": "yqzwz048uvd4wimtoyy74bd57"
+            },
+            "added_at": "2024-10-09T08:49:23Z"
+          },
+          "vote": null
+        }
+      ]
+    ]
+  },
+  "198338583260692482": {
+    "songs": [
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Chris Brown"
+                },
+                {
+                  "name": "Lil Wayne"
+                },
+                {
+                  "name": "Tyga"
+                }
+              ],
+              "duration_ms": 264946,
+              "name": "Loyal (feat. Lil Wayne & Tyga)",
+              "uri": "spotify:track:5BrTUo0xP1wKXLJWUaGFtk",
+              "popularity": 74
+            },
+            "added_by": {
+              "id": "22ykd3a2sxif3tudh2rhn7nhy"
+            },
+            "added_at": "2024-10-02T02:02:34Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Drake"
+                }
+              ],
+              "duration_ms": 208946,
+              "name": "Find Your Love",
+              "uri": "spotify:track:4BycRneKmOs6MhYG9THsuX",
+              "popularity": 63
+            },
+            "added_by": {
+              "id": "22ykd3a2sxif3tudh2rhn7nhy"
+            },
+            "added_at": "2024-10-02T03:45:14Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Taio Cruz"
+                },
+                {
+                  "name": "Ludacris"
+                }
+              ],
+              "duration_ms": 186266,
+              "name": "Break Your Heart",
+              "uri": "spotify:track:1CdqVF1ywD0ZO1zXtB9yWa",
+              "popularity": 66
+            },
+            "added_by": {
+              "id": "22ykd3a2sxif3tudh2rhn7nhy"
+            },
+            "added_at": "2024-10-02T03:46:45Z"
+          },
+          "vote": null
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Katy Perry"
+                }
+              ],
+              "duration_ms": 227880,
+              "name": "Firework",
+              "uri": "spotify:track:4lCv7b86sLynZbXhfScfm2",
+              "popularity": 70
+            },
+            "added_by": {
+              "id": "22ykd3a2sxif3tudh2rhn7nhy"
+            },
+            "added_at": "2024-10-09T06:24:40Z"
+          },
+          "vote": null
+        }
+      ]
+    ]
+  },
+  "216377314982756356": {
+    "songs": [
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "NewJeans"
+                }
+              ],
+              "duration_ms": 151373,
+              "name": "ETA",
+              "uri": "spotify:track:56v8WEnGzLByGsDAXDiv4d",
+              "popularity": 77
+            },
+            "added_by": {
+              "id": "22vfgrxvdndvgnyz7bj5zv4di"
+            },
+            "added_at": "2024-10-02T03:26:40Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Little Mix"
+                }
+              ],
+              "duration_ms": 197786,
+              "name": "Love Me Like You",
+              "uri": "spotify:track:6L2uVVPJA9WcDc7zCZ4DHN",
+              "popularity": 66
+            },
+            "added_by": {
+              "id": "22vfgrxvdndvgnyz7bj5zv4di"
+            },
+            "added_at": "2024-10-02T03:27:07Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "wave to earth"
+                }
+              ],
+              "duration_ms": 263250,
+              "name": "bad",
+              "uri": "spotify:track:5TZKpQFKCbIlWGD8DzHbC6",
+              "popularity": 76
+            },
+            "added_by": {
+              "id": "22vfgrxvdndvgnyz7bj5zv4di"
+            },
+            "added_at": "2024-10-02T03:28:54Z"
+          },
+          "vote": null
+        }
+      ],
+      []
+    ]
+  },
+  "153665486494629888": {
+    "songs": [
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Lady Gaga"
+                }
+              ],
+              "duration_ms": 294573,
+              "name": "Bad Romance",
+              "uri": "spotify:track:0SiywuOBRcynK0uKGWdCnn",
+              "popularity": 82
+            },
+            "added_by": {
+              "id": "fax416ds7nujqx58lirt8yz3j"
+            },
+            "added_at": "2024-10-02T01:16:53Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Chris Brown"
+                }
+              ],
+              "duration_ms": 278573,
+              "name": "Forever",
+              "uri": "spotify:track:3NZJlJemX3mzjf56MqC5ML",
+              "popularity": 77
+            },
+            "added_by": {
+              "id": "fax416ds7nujqx58lirt8yz3j"
+            },
+            "added_at": "2024-10-02T06:11:23Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Porter Robinson"
+                },
+                {
+                  "name": "Madeon"
+                }
+              ],
+              "duration_ms": 218964,
+              "name": "Shelter",
+              "uri": "spotify:track:2ewEh7LuvToYyGHq7yT8N1",
+              "popularity": 62
+            },
+            "added_by": {
+              "id": "fax416ds7nujqx58lirt8yz3j"
+            },
+            "added_at": "2024-10-02T06:14:27Z"
+          },
+          "vote": null
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Ariana Grande"
+                },
+                {
+                  "name": "Zedd"
+                }
+              ],
+              "duration_ms": 214840,
+              "name": "Break Free",
+              "uri": "spotify:track:12KUFSHFgT0XCoiSlvdQi4",
+              "popularity": 75
+            },
+            "added_by": {
+              "id": "fax416ds7nujqx58lirt8yz3j"
+            },
+            "added_at": "2024-10-09T03:57:18Z"
+          },
+          "vote": null
+        }
+      ]
+    ]
+  },
+  "153579334286835712": {
+    "songs": [
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Mayday Parade"
+                }
+              ],
+              "duration_ms": 216000,
+              "name": "Jamie All Over",
+              "uri": "spotify:track:05qCCJQJiOwvPQBb7akf1R",
+              "popularity": 62
+            },
+            "added_by": {
+              "id": "1265167543"
+            },
+            "added_at": "2024-10-02T23:20:59Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Point North"
+                }
+              ],
+              "duration_ms": 220833,
+              "name": "Hammer",
+              "uri": "spotify:track:5kqr6EkKEafBGKxzjdXOVP",
+              "popularity": 52
+            },
+            "added_by": {
+              "id": "1265167543"
+            },
+            "added_at": "2024-10-02T23:21:10Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Mrs. GREEN APPLE"
+                }
+              ],
+              "duration_ms": 203149,
+              "name": "ダンスホール",
+              "uri": "spotify:track:4NaaF28BeO9WzjDrSS71Nz",
+              "popularity": 73
+            },
+            "added_by": {
+              "id": "1265167543"
+            },
+            "added_at": "2024-10-02T23:23:43Z"
+          },
+          "vote": null
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Paramore"
+                }
+              ],
+              "duration_ms": 211520,
+              "name": "Misery Business",
+              "uri": "spotify:track:6SpLc7EXZIPpy0sVko0aoU",
+              "popularity": 74
+            },
+            "added_by": {
+              "id": "1265167543"
+            },
+            "added_at": "2024-10-09T03:44:13Z"
+          },
+          "vote": null
+        }
+      ]
+    ]
+  },
+  "183771302828572672": {
+    "songs": [
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "The Weeknd"
+                }
+              ],
+              "duration_ms": 214193,
+              "name": "Out of Time",
+              "uri": "spotify:track:2SLwbpExuoBDZBpjfefCtV",
+              "popularity": 74
+            },
+            "added_by": {
+              "id": "1245414659"
+            },
+            "added_at": "2024-10-02T05:24:39Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Calvin Harris"
+                },
+                {
+                  "name": "Frank Ocean"
+                },
+                {
+                  "name": "Migos"
+                },
+                {
+                  "name": "Funk Wav"
+                }
+              ],
+              "duration_ms": 230813,
+              "name": "Slide (feat. Frank Ocean & Migos)",
+              "uri": "spotify:track:7tr2za8SQg2CI8EDgrdtNl",
+              "popularity": 75
+            },
+            "added_by": {
+              "id": "1245414659"
+            },
+            "added_at": "2024-10-02T05:25:10Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Post Malone"
+                }
+              ],
+              "duration_ms": 211426,
+              "name": "92 Explorer",
+              "uri": "spotify:track:1D2L6MefbXon28PzIk9I3r",
+              "popularity": 63
+            },
+            "added_by": {
+              "id": "1245414659"
+            },
+            "added_at": "2024-10-02T05:31:03Z"
+          },
+          "vote": null
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Lauv"
+                }
+              ],
+              "duration_ms": 197436,
+              "name": "I Like Me Better",
+              "uri": "spotify:track:0EcQcdcbQeVJn9fknj44Be",
+              "popularity": 79
+            },
+            "added_by": {
+              "id": "1245414659"
+            },
+            "added_at": "2024-10-09T05:12:14Z"
+          },
+          "vote": null
+        }
+      ]
+    ]
+  },
+  "143083192159698944": {
+    "songs": [
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Eyedi"
+                }
+              ],
+              "duration_ms": 183026,
+              "name": "J.us.T",
+              "uri": "spotify:track:3QNzLwUA7h3CCB1uuKFpg3",
+              "popularity": 22
+            },
+            "added_by": {
+              "id": "bb3amt8y4jl2pakk857soxwly"
+            },
+            "added_at": "2024-10-03T04:21:54Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "brb."
+                }
+              ],
+              "duration_ms": 178560,
+              "name": "do me right",
+              "uri": "spotify:track:2GcypFJcULDmhmbqFdm9qi",
+              "popularity": 59
+            },
+            "added_by": {
+              "id": "bb3amt8y4jl2pakk857soxwly"
+            },
+            "added_at": "2024-10-03T04:22:03Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Tennyson"
+                },
+                {
+                  "name": "Aloe Blacc"
+                }
+              ],
+              "duration_ms": 195611,
+              "name": "Body Language (feat. Aloe Blacc)",
+              "uri": "spotify:track:2Q0Crvi1cJr1Bhf9Iwugdb",
+              "popularity": 29
+            },
+            "added_by": {
+              "id": "bb3amt8y4jl2pakk857soxwly"
+            },
+            "added_at": "2024-10-03T04:22:33Z"
+          },
+          "vote": null
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Sarah Kang"
+                },
+                {
+                  "name": "Won Jang"
+                }
+              ],
+              "duration_ms": 195793,
+              "name": "Summer Cold",
+              "uri": "spotify:track:2cLbtrh2FAEk2o2p6Csr0L",
+              "popularity": 29
+            },
+            "added_by": {
+              "id": "bb3amt8y4jl2pakk857soxwly"
+            },
+            "added_at": "2024-10-09T03:54:24Z"
+          },
+          "vote": null
+        }
+      ]
+    ]
+  }
+}

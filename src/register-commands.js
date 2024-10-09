@@ -88,7 +88,6 @@ const commands = [
                     },                   
                 ],
             },
-
         ],
     },
     {
@@ -107,6 +106,58 @@ const commands = [
         name: 'missing',
         description: 'Check missing songs this week',
     },
+    // {
+    //     name: 'add_entry',
+    //     description: 'Add entry to both files', 
+    // },
+    // {
+    //     name: 'edit_entry',
+    //     description: 'Change entry in file',
+    //     options: [
+    //         {
+    //             name: 'file',
+    //             description: 'Pick which file to edit',
+    //             type: ApplicationCommandOptionType.String,
+    //             required : true,
+    //             choices:[
+    //                 {
+    //                     name: 'Hall of Fame',
+    //                     value: 'winner',
+    //                 }, 
+    //                 {
+    //                     name: 'Hall of Shame',
+    //                     value: 'loser',
+    //                 },                                     
+    //             ],
+    //         },
+    //         {
+    //             name: 'action',
+    //             description: 'Pick which action to perform',
+    //             type: ApplicationCommandOptionType.String,
+    //             required : true,
+    //             choices:[
+    //                 {
+    //                     name: 'Add',
+    //                     value: 'add',
+    //                 },
+    //                 {
+    //                     name: 'Edit',
+    //                     value: 'edit',
+    //                 },
+    //                 {
+    //                     name: 'Delete',
+    //                     value: 'delete',
+    //                 },                   
+    //             ],
+    //         },
+    //         {
+    //             name: 'week',
+    //             description : 'Select which week to edit',
+    //             type: ApplicationCommandOptionType.Number, 
+    //             required: true,
+    //         },
+    //     ],
+    // },
 ];
 
 const rest = new REST({ version : '10'}).setToken(process.env.DISCORD_BOT_TOKEN);

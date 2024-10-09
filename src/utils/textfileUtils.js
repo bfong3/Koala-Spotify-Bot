@@ -1,8 +1,8 @@
 import { AttachmentBuilder } from 'discord.js';
 import fs from 'fs/promises';
 
-const HOF_FILE = 'src/Weekly Results/winners.txt'
-const HOS_FILE = 'src/Weekly Results/losers.txt'
+export const HOF_FILE = 'src/Weekly Results/winners.txt'
+export const HOS_FILE = 'src/Weekly Results/losers.txt'
 
 //Display specfic week details or sends entire file
 export const displayFileContents = async (interaction, commandName, currentWeek) => {
@@ -13,7 +13,7 @@ export const displayFileContents = async (interaction, commandName, currentWeek)
     }
     else{
         const weekNumber = interaction.options.getNumber('number');
-        const weekEntry = await getSpecificWeekData(interaction, fileName, weekNumber, currentWeek);
+        const weekEntry = await getSpecificWeekData(interaction, fileName, weekNumber, currentWeek, true);
         if(weekEntry != null){
             interaction.reply(`Here are the details for Week ${weekNumber}:\n${weekEntry}`);
         }
@@ -42,12 +42,12 @@ const sendEntireFile = async (interaction, fileName) => {
 };
 
 //Searches for the specfic week we're on since starting. i.e (Week 1, Week 10, etc... ) then prints out the data
-const getSpecificWeekData = async (interaction, fileName, weekNumber, currentWeek) => {    
-    if(weekNumber === 0){
-        return 'nobody'; //Special edge case for when playlist is first created and no winners
-    }
-    else if(!weekNumber || weekNumber < 0){
-        interaction.reply(`Enter a valid number from 0 to ${currentWeek}.\n **/${interaction.commandName} <week> <number>**`);
+const getSpecificWeekData = async (interaction, fileName, weekNumber, currentWeek, reply) => {
+    if(currentWeek === 1 && weekNumber == 0){ //THIS IS THE ONLY TIME WHEN WEEK 0 IS OK
+        return null;
+    }    
+    if(!weekNumber || weekNumber <= 0){
+        interaction.reply(`Enter a valid number from 1 to ${currentWeek}.\n **/${interaction.commandName} <week> <number>**`);
         return null;
     } 
     else if (weekNumber > currentWeek){
@@ -80,8 +80,10 @@ const getSpecificWeekData = async (interaction, fileName, weekNumber, currentWee
         if (weekFound) {
             return await weekEntry;
         } else {
-            console.log(`Week ${weekNumber} is missing from ${fileName}.`);
-            await interaction.reply(`Week ${weekNumber} is missing.`);
+            if(reply){
+                console.log(`Week ${weekNumber} is missing from ${fileName}.`);
+                await interaction.reply(`There is no entry for Week ${weekNumber}.`);
+            }
             return null;
         }
     } catch (err) {
@@ -101,9 +103,11 @@ const getWinnerName = (entry) => {
     }
 }
 
-export const getLatestWinnerDiscordID = async (interaction, weekNumber, DISCORD_ID_DICTIONARY, currentWeek) => {
-    const entry = await getSpecificWeekData(interaction, HOF_FILE, weekNumber, currentWeek);
-    if(entry === null || entry === 'nobody'){
+export const getLatestDiscordID = async (interaction, file, weekNumber, DISCORD_ID_DICTIONARY, currentWeek) => {
+    file = (file === 'winner') ? HOF_FILE : HOS_FILE;
+    //You want the winner from LAST WEEK, but loser from THIS WEEK (if applicable)
+    const entry = (file === HOF_FILE) ? await getSpecificWeekData(interaction, file, weekNumber, currentWeek, true) : await getSpecificWeekData(interaction, file, weekNumber, currentWeek, false);
+    if(!entry){
         return entry;
     }
     const realName = getWinnerName(entry);
@@ -112,5 +116,6 @@ export const getLatestWinnerDiscordID = async (interaction, weekNumber, DISCORD_
             return discordID; // Return the Discord ID if a match is found
         }
     }
+    console.log(`Couldn't find DiscordID associated with ${realName}.\n`);
     return null;
 }

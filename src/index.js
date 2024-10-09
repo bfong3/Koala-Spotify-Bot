@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'; 
 import * as utils from './utils/index.js';
 import { getPlaylistData } from './Spotify Code/app.js';
-import { Client, IntentsBitField, InteractionResponse } from 'discord.js';
+import { Client, IntentsBitField, Events, InteractionType } from 'discord.js';
 
 dotenv.config();
 
@@ -24,41 +24,61 @@ const DISCORD_ID_DICTIONARY = {
     '143083192159698944': { realName: 'Zhao', spotifyId: 'bb3amt8y4jl2pakk857soxwly' }
 };
 
-const ENTIRE_PLAYLIST = await getPlaylistData();
+let entirePlaylist;
 
 const client = new Client({intents: [
     IntentsBitField.Flags.Guilds,
     IntentsBitField.Flags.GuildMembers,
     IntentsBitField.Flags.GuildMessages,
+    IntentsBitField.Flags.MessageContent,
 ],
 });
 
 client.on('ready', async (c) => {
+    const pulledPlaylist = await getPlaylistData();
+    const currentWeek = utils.getCurrentWeek();
+    await utils.updateStoredSongs(currentWeek, DISCORD_ID_DICTIONARY, pulledPlaylist); //Update with any new songs added this week
+    entirePlaylist = await utils.loadStoredSongs();
+    //console.log(entirePlaylist);
     console.log(`${c.user.tag} is ready.`);
 });
 
 client.on('interactionCreate', async (interaction) =>{
+    //console.log("Interaction received:", interaction);
     if(!interaction.isChatInputCommand()) return;
 
-    if(interaction.commandName === 'songs'){
-        utils.printSongsFromUser(interaction, DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST);
+    if(interaction.commandName === 'songs'){ //DONE 
+        utils.printSongsFromUser(interaction, DISCORD_ID_DICTIONARY, entirePlaylist);
     }
     if (interaction.commandName === 'leaderboards') {
         const selectedCategory = interaction.options.get('category').value;
-        const scores = utils.sortedByCategorySongs(selectedCategory, DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST);
+        const scores = utils.sortedByCategorySongs(selectedCategory, DISCORD_ID_DICTIONARY, entirePlaylist);
         await utils.displayLeaderboard(interaction, selectedCategory, scores);
     }
     if(interaction.commandName === 'hall_of_fame' || interaction.commandName === 'hall_of_shame'){
-        const currentWeekNumber = utils.calculateCurrentWeek(DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST);
+        const currentWeekNumber = utils.getCurrentWeek();
         utils.displayFileContents(interaction, interaction.commandName, currentWeekNumber);
     }
     if(interaction.commandName === 'missing'){
-        const currentWeekNumber = utils.calculateCurrentWeek(DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST);
-        const latestWinnerDiscordID = await utils.getLatestWinnerDiscordID(interaction, currentWeekNumber - 1, DISCORD_ID_DICTIONARY, currentWeekNumber);
-        utils.replyAllMissingSongs(interaction, latestWinnerDiscordID, DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST);
+        const currentWeekNumber = utils.getCurrentWeek();
+        const latestWinnerDiscordID = await utils.getLatestDiscordID(interaction, "winner", currentWeekNumber - 1, DISCORD_ID_DICTIONARY, currentWeekNumber);
+        utils.replyAllMissingSongs(interaction, latestWinnerDiscordID, currentWeekNumber, DISCORD_ID_DICTIONARY, entirePlaylist);
+    }
+    if(interaction.commandName === 'add_entry'){
+        const currentWeekNumber = utils.calculateCurrentWeek(DISCORD_ID_DICTIONARY, entirePlaylist);
+        const latestLoserDiscordID = await utils.getLatestDiscordID(interaction, "loser", currentWeekNumber, DISCORD_ID_DICTIONARY, currentWeekNumber); 
+        const specificWeekSongs = utils.songsFromSpecificWeek(currentWeekNumber, currentWeekNumber, latestLoserDiscordID, DISCORD_ID_DICTIONARY, entirePlaylist);
+        const confirmedSongs = await utils.displaySongsFromSpecificWeek(interaction, specificWeekSongs);
+        if(!confirmedSongs){
+            return;
+        }
+
+        //const selectedWeek = interaction.options.get('week').value;
+    //     const selectedFile = interaction.options.get('file').value;
+    //     const selectedAction = interaction.options.get('action').value;
     }
 })
 
 client.login(process.env.DISCORD_BOT_TOKEN);
 
-export { ENTIRE_PLAYLIST };
+export { DISCORD_ID_DICTIONARY, entirePlaylist };
