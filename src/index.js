@@ -34,10 +34,21 @@ const client = new Client({intents: [
 ],
 });
 
+function getRules() {
+    return (
+        "**Rule 1**: Add your new song(s) to the playlist between every Tuesday and Wednesday.\n" +
+        "**Rule 2**: No adding previously voted off songs.\n" +
+        "**Rule 3**: No duplicate songs.\n" + 
+        "**Rule 4**: No meme songs.\n" + 
+        "**Rule 5**: Every Monday, we vote for the most and least favorite songs of the week. The most favorite must be from the current week, while the least favorite can be from any week.\n" +
+        "**Rule 6**: The least favorite song will be removed, and the winner of the most favorite adds an extra song the following week."
+    );
+}
+
 client.on('ready', async (c) => {
     const pulledPlaylist = await getPlaylistData();
     const currentWeek = utils.getCurrentWeek();
-    await utils.updateStoredSongs(currentWeek, DISCORD_ID_DICTIONARY, pulledPlaylist); //Update with any new songs added this week
+    await utils.updateStoredSongs(currentWeek, DISCORD_ID_DICTIONARY, pulledPlaylist); //Update with all songs added this week
     entirePlaylist = await utils.loadStoredSongs();
     //console.log(entirePlaylist);
     console.log(`${c.user.tag} is ready.`);
@@ -64,6 +75,10 @@ client.on('interactionCreate', async (interaction) =>{
         const latestWinnerDiscordID = await utils.getLatestDiscordID(interaction, "winner", currentWeekNumber - 1, DISCORD_ID_DICTIONARY, currentWeekNumber);
         utils.replyAllMissingSongs(interaction, latestWinnerDiscordID, currentWeekNumber, DISCORD_ID_DICTIONARY, entirePlaylist);
     }
+    if(interaction.commandName === 'rules'){
+        interaction.reply(getRules());
+    }
+    /*
     if(interaction.commandName === 'add_entry'){
         const currentWeekNumber = utils.calculateCurrentWeek(DISCORD_ID_DICTIONARY, entirePlaylist);
         const latestLoserDiscordID = await utils.getLatestDiscordID(interaction, "loser", currentWeekNumber, DISCORD_ID_DICTIONARY, currentWeekNumber); 
@@ -73,10 +88,11 @@ client.on('interactionCreate', async (interaction) =>{
             return;
         }
 
-        //const selectedWeek = interaction.options.get('week').value;
-    //     const selectedFile = interaction.options.get('file').value;
-    //     const selectedAction = interaction.options.get('action').value;
+        const selectedWeek = interaction.options.get('week').value;
+        const selectedFile = interaction.options.get('file').value;
+        const selectedAction = interaction.options.get('action').value;
     }
+        */
 })
 
 client.login(process.env.DISCORD_BOT_TOKEN);

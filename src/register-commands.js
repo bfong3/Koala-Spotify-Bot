@@ -106,6 +106,10 @@ const commands = [
         name: 'missing',
         description: 'Check missing songs this week',
     },
+    {
+        name: 'rules',
+        description: 'Rules for the playlist',
+    },
     // {
     //     name: 'add_entry',
     //     description: 'Add entry to both files', 
