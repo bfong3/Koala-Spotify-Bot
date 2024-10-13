@@ -114,7 +114,7 @@ export const displayLeaderboard = async (interaction, option, categorizedSongs) 
             break;
 
         case 'duration':
-            replyMessage = `**Everyone's Average Song Length (in seconds):**\n`;
+            replyMessage = `**Everyone's Average Song Length:**\n`;
             replyMessage += "```\n| Name          | Avg Song Length |\n| ------------- | --------------- |\n";
             categorizedSongs.forEach(({ name, displayScore }) => {
                 replyMessage += `| ${name.padEnd(13)} | ${displayScore.toString().padEnd(15)} |\n`;
