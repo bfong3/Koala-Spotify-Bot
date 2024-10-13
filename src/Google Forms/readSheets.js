@@ -4,18 +4,18 @@ function sortObjectByValuesAndKeys(obj) {
   // Convert the object into an array of [key, value] pairs
   const entries = Object.entries(obj);
 
-  // Sort the entries based on values (descending) and keys (ascending) for ties
+  // Sort the entries based on the score (descending) and name (ascending) for ties
   entries.sort((a, b) => {
-    // First, compare by value in descending order
-    const valueComparison = b[1] - a[1];
-    
-    // If values are the same, compare by key in ascending order
-    if (valueComparison === 0) {
+    // Compare scores in descending order
+    const scoreComparison = b[1].score - a[1].score;
+
+    // If scores are the same, compare keys (names) in ascending order
+    if (scoreComparison === 0) {
       return a[0].localeCompare(b[0]);
     }
-    
-    // Return the comparison result for values
-    return valueComparison;
+
+    // Return the comparison result for scores
+    return scoreComparison;
   });
 
   // Convert back to an object (optional)
@@ -30,28 +30,39 @@ function formatScoresAsString(scores, isWinner) {
   const sortedScores = sortObjectByValuesAndKeys(scores);
 
   // Build a formatted string
-  let result = (isWinner) ? 'Most Favorite Songs This Week:\n' : 'Least Favorite Songs This Week:\n';
+  let result = isWinner ? 'Most Favorite Songs This Week:\n' : 'Least Favorite Songs This Week:\n';
   let index = 1; // Start index from 1
+
+  // Loop through sorted scores and format the output
   for (const [key, value] of Object.entries(sortedScores)) {
-    result += `${index}. ${key}: ${value}\n`; // Add index before each entry
+    result += `${index}. ${key}: Score = ${value.score}, Votes = ${value.votes}\n`; // Format each entry
     index++; // Increment index
   }
 
   return result.trim(); // Remove trailing newline
 }
 
+
 //Reads column 3-8
 function addColumnScore(dictionary, columnIndex, columnData){
-  const pointsAdded = 3 - ((columnIndex - 3) % 3);
+  const shiftedIndex = columnIndex - 3;
+  const pointsAdded = 3 - (shiftedIndex % 3);
   for(let i = 1; i < columnData.length; i++){
-    if(columnData[i] in dictionary){
-      dictionary[columnData[i]] += pointsAdded;
+    const songName = columnData[i];
+    if(songName in dictionary){
+      dictionary[songName] += pointsAdded;
+      dictionary[songName].votes[shiftedIndex % 3] += 1;
     } else{
-      dictionary[columnData[i]] = pointsAdded;
+      //dictionary[songName] = pointsAdded;
+      dictionary[songName] = {
+        score: pointsAdded,
+        votes: [0, 0, 0]
+      };
+      dictionary[songName].votes[shiftedIndex % 3] += 1;
     }
   }
   return dictionary;
-}
+} 
 
 function parseGoogleSheets() {
   const spreadsheet = SpreadsheetApp.openById(GOOGLE_SHEETS_ID);
@@ -71,11 +82,8 @@ function parseGoogleSheets() {
   }
   winnerDict = sortObjectByValuesAndKeys(winnerDict);
   loserDict = sortObjectByValuesAndKeys(loserDict)
-  //console.log(winnerDict);
-  //console.log(loserDict);
   winnerDict = formatScoresAsString(winnerDict, true);
   loserDict = formatScoresAsString(loserDict, false);
   console.log(winnerDict);
   console.log(loserDict);
-
 }
