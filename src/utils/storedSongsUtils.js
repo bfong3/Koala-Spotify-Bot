@@ -2,6 +2,7 @@ import { getWeekNumber } from './dateUtils.js';
 import fs from 'fs/promises';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { entirePlaylist } from '../index.js';
 
 /**
  * Writes a JavaScript object to a JSON file.
@@ -198,15 +199,40 @@ export const songsFromUser = (discordID, entirePlaylist) => {
 };
 
 
-export const getSpecificWeekSongs = (entirePlaylist, currentWeekNumber) => {
+export const getSpecificWeekSongs = (entirePlaylist, weekNumber) => {
     let latestSongs = [];
-    const index = currentWeekNumber - 1;
+    const index = weekNumber - 1;
     for (const discordID in entirePlaylist){
         const userWeeklySongs = entirePlaylist[discordID].songs[index];
         for(let i = 0; i < userWeeklySongs.length; i++){
+            if(userWeeklySongs.vote === false){
+                continue;
+            }
             latestSongs.push(userWeeklySongs[i].song);
         }
     }
     return latestSongs;
 }
 
+export const getAllSongs = (entirePlaylist) => {
+    let allSongs = [];
+    for (const discordID in entirePlaylist){
+        allSongs = allSongs.concat(songsFromUser(discordID, entirePlaylist));
+    }
+    return allSongs;
+}
+
+export const songTitlesAsArray = (entirePlaylist, weekNumber) => {
+    let requestedSongs = [];
+    let returnedSongs = [];
+    if(weekNumber === null){
+        requestedSongs = getAllSongs(entirePlaylist);
+    } else{
+        requestedSongs = getSpecificWeekSongs(entirePlaylist, weekNumber);
+    }
+    for(let i = 0; i < requestedSongs.length; i++){
+        returnedSongs.push(requestedSongs[i].track.name);
+    }
+    returnedSongs.sort();
+    return returnedSongs;
+}

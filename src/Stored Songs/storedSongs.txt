@@ -1068,18 +1068,18 @@
             "track": {
               "artists": [
                 {
-                  "name": "Katy Perry"
+                  "name": "Post Malone"
                 }
               ],
-              "duration_ms": 227880,
-              "name": "Firework",
-              "uri": "spotify:track:4lCv7b86sLynZbXhfScfm2",
-              "popularity": 70
+              "duration_ms": 256532,
+              "name": "White Iverson",
+              "uri": "spotify:track:6eT7xZZlB2mwyzJ2sUKG6w",
+              "popularity": 74
             },
             "added_by": {
               "id": "22ykd3a2sxif3tudh2rhn7nhy"
             },
-            "added_at": "2024-10-09T06:24:40Z"
+            "added_at": "2024-10-10T06:50:10Z"
           },
           "vote": null
         }
@@ -1150,7 +1150,34 @@
           "vote": null
         }
       ],
-      []
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Jesse Barrera"
+                },
+                {
+                  "name": "Albert Posis"
+                },
+                {
+                  "name": "Michael Carreon"
+                }
+              ],
+              "duration_ms": 171216,
+              "name": "Strawberry Soju",
+              "uri": "spotify:track:3Naqjihn2GJjOBZNeenivP",
+              "popularity": 59
+            },
+            "added_by": {
+              "id": "22vfgrxvdndvgnyz7bj5zv4di"
+            },
+            "added_at": "2024-10-10T03:02:24Z"
+          },
+          "vote": null
+        }
+      ]
     ]
   },
   "153665486494629888": {
@@ -1317,18 +1344,18 @@
             "track": {
               "artists": [
                 {
-                  "name": "Paramore"
+                  "name": "Forever The Sickest Kids"
                 }
               ],
-              "duration_ms": 211520,
-              "name": "Misery Business",
-              "uri": "spotify:track:6SpLc7EXZIPpy0sVko0aoU",
-              "popularity": 74
+              "duration_ms": 224373,
+              "name": "Nikki",
+              "uri": "spotify:track:2xu7bTUyvvJMBMi6JXvWAZ",
+              "popularity": 45
             },
             "added_by": {
               "id": "1265167543"
             },
-            "added_at": "2024-10-09T03:44:13Z"
+            "added_at": "2024-10-10T22:04:51Z"
           },
           "vote": null
         }

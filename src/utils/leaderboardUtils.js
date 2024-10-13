@@ -20,8 +20,7 @@ const calculateAverage = (list, category) => {
 
 
 export const sortedByCategorySongs = (category, DISCORD_ID_DICTIONARY, entirePlaylist) => {
-    const userStats = [];
-
+    const categorizedSongs = [];
     for (const discordID in DISCORD_ID_DICTIONARY) {
         const realName = DISCORD_ID_DICTIONARY[discordID].realName;
         const sortedList = songsFromUser(discordID, entirePlaylist);
@@ -36,13 +35,13 @@ export const sortedByCategorySongs = (category, DISCORD_ID_DICTIONARY, entirePla
                 displayScore = convertSecondsToMinutes(Math.floor(score));
             }
 
-            userStats.push({ name: realName, score, displayScore });
+            categorizedSongs.push({ name: realName, score, displayScore });
         } else if (category === 'added') {
-            userStats.push({ name: realName, score: sortedList.length });
+            categorizedSongs.push({ name: realName, score: sortedList.length });
         } else {
             const popularityScore = calculateAverage(sortedList, 'popularity');
             const durationScore = convertSecondsToMinutes(Math.floor(calculateAverage(sortedList, 'duration')));
-            userStats.push({
+            categorizedSongs.push({
                 name: realName,
                 songsCount: sortedList.length,
                 songDuration: durationScore,
@@ -51,13 +50,13 @@ export const sortedByCategorySongs = (category, DISCORD_ID_DICTIONARY, entirePla
         }
     }
 
-    userStats.sort((a, b) => {
+    categorizedSongs.sort((a, b) => {
         if (category === 'added') return b.score - a.score; // For 'added' category, sort by the number of songs
         if (category === 'popularity' || category === 'duration') {
             return b.score === a.score ? a.name.localeCompare(b.name) : b.score - a.score;
         }
     });
-    return userStats;
+    return categorizedSongs;
 };
 
 export function printSongsFromUser(interaction, DISCORD_ID_DICTIONARY, entirePlaylist) {
@@ -101,7 +100,7 @@ function songsFromUserReplyMessage(realName, sortedList) {
     return replyMessage;
 }
 
-export const displayLeaderboard = async (interaction, option, userStats) => {
+export const displayLeaderboard = async (interaction, option, categorizedSongs) => {
     let replyMessage = '';
 
     switch (option) {
@@ -109,7 +108,7 @@ export const displayLeaderboard = async (interaction, option, userStats) => {
             replyMessage = `**Everyone's Average Song Popularity:**\n`;
             replyMessage += `*(The popularity of a track is a value between 0 and 100, with 100 being the most popular)*\n`;
             replyMessage += "```\n| Name          | Song Popularity |\n| ------------- | --------------- |\n";
-            userStats.forEach(({ name, score }) => {
+            categorizedSongs.forEach(({ name, score }) => {
                 replyMessage += `| ${name.padEnd(13)} | ${score.toString().padEnd(15)} |\n`;
             });
             break;
@@ -117,7 +116,7 @@ export const displayLeaderboard = async (interaction, option, userStats) => {
         case 'duration':
             replyMessage = `**Everyone's Average Song Length (in seconds):**\n`;
             replyMessage += "```\n| Name          | Avg Song Length |\n| ------------- | --------------- |\n";
-            userStats.forEach(({ name, displayScore }) => {
+            categorizedSongs.forEach(({ name, displayScore }) => {
                 replyMessage += `| ${name.padEnd(13)} | ${displayScore.toString().padEnd(15)} |\n`;
             });
             break;
@@ -125,7 +124,7 @@ export const displayLeaderboard = async (interaction, option, userStats) => {
         case 'added':
             replyMessage = `**Everyone's Number of Added Songs:**\n`;
             replyMessage += "```\n| Name          | Songs Added |\n| ------------- | ----------- |\n";
-            userStats.forEach(({ name, score }) => {
+            categorizedSongs.forEach(({ name, score }) => {
                 replyMessage += `| ${name.padEnd(13)} | ${score.toString().padEnd(11)} |\n`;
             });
             break;
@@ -133,7 +132,7 @@ export const displayLeaderboard = async (interaction, option, userStats) => {
         default:
             replyMessage = `**Overall Leaderboard:**\n`;
             replyMessage += "```\n| Name          | Songs Added | Avg Song Length | Song Popularity |\n| ------------- | ----------- | --------------- | --------------- |\n";
-            userStats.forEach(({ name, songsCount, songDuration, songPopularity }) => {
+            categorizedSongs.forEach(({ name, songsCount, songDuration, songPopularity }) => {
                 replyMessage += `| ${name.padEnd(13)} | ${songsCount.toString().padEnd(11)} | ${songDuration.toString().padEnd(15)} | ${songPopularity.toString().padEnd(15)} |\n`;
             });
             break;

@@ -36,12 +36,11 @@ const client = new Client({intents: [
 
 function getRules() {
     return (
-        "**Rule 1**: Add your new song(s) to the playlist between every Tuesday and Wednesday.\n" +
-        "**Rule 2**: No adding previously voted off songs.\n" +
-        "**Rule 3**: No duplicate songs.\n" + 
-        "**Rule 4**: No meme songs.\n" + 
-        "**Rule 5**: Every Monday, we vote for the most and least favorite songs of the week. The most favorite must be from the current week, while the least favorite can be from any week.\n" +
-        "**Rule 6**: The least favorite song will be removed, and the winner of the most favorite adds an extra song the following week."
+        "**Rule 1**: Add your new song(s) to the playlist between every Tuesday and Wednesday. You can make changes to your song selection(s) during this time.\n" +
+        "**Rule 2**: No duplicate, meme, or previously voted off songs.\n" + 
+        "**Rule 3**: If a song and its remix are both submitted, only one version can remain in the playlist.\n" + 
+        "**Rule 4**: Every Monday, we vote for the most and least favorite songs of the week. The most favorite must be from the current week, while the least favorite can be from any week.\n" +
+        "**Rule 5**: The least favorite song will be removed, and the winner of the most favorite adds an extra song the following week."
     );
 }
 
@@ -58,13 +57,13 @@ client.on('interactionCreate', async (interaction) =>{
     //console.log("Interaction received:", interaction);
     if(!interaction.isChatInputCommand()) return;
 
-    if(interaction.commandName === 'songs'){ //DONE 
+    if(interaction.commandName === 'songs'){
         utils.printSongsFromUser(interaction, DISCORD_ID_DICTIONARY, entirePlaylist);
     }
     if (interaction.commandName === 'leaderboards') {
         const selectedCategory = interaction.options.get('category').value;
-        const scores = utils.sortedByCategorySongs(selectedCategory, DISCORD_ID_DICTIONARY, entirePlaylist);
-        await utils.displayLeaderboard(interaction, selectedCategory, scores);
+        const categorizedSongs = utils.sortedByCategorySongs(selectedCategory, DISCORD_ID_DICTIONARY, entirePlaylist);
+        await utils.displayLeaderboard(interaction, selectedCategory, categorizedSongs);
     }
     if(interaction.commandName === 'hall_of_fame' || interaction.commandName === 'hall_of_shame'){
         const currentWeekNumber = utils.getCurrentWeek();
