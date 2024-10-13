@@ -1,1 +1,8 @@
+#Important Files
 .env
+
+
+#Unimportant Files 
+src\Google Forms\.clasp.json
+src\Google Forms\appsscript.json
+src\private_testing.js
