@@ -30,12 +30,12 @@ function parseFileData(fileContent) {
 
     // Add songs to the respective arrays
     if (isThisWeeksSongs && line.match(/^\d+:/)) {
-      const song = line.split(':')[1].trim().replace(/"/g, '');
+      const song = line.substring(line.indexOf(':') + 1).trim().replace(/"/g, '');
       thisWeeksSongs.push(song);
     }
     
     if (isAllSongs && line.match(/^\d+:/)) {
-      const song = line.split(':')[1].trim().replace(/"/g, '');
+      const song = line.substring(line.indexOf(':') + 1).trim().replace(/"/g, '');
       allSongs.push(song);
     }
   });
@@ -94,7 +94,7 @@ function createForm(weekNumber, thisWeeksSongs, allSongs) {
   const rulesText = "Please follow these rules when selecting your songs:\n\n" +
                       "1. DO NOT VOTE YOUR OWN SONG!!!\n" +
                       "2. DO NOT VOTE THE SAME SONG TWICE IN THE SAME SECTION!\n" +
-                      "2A. You could vote for the same song once as a favorite and once as a least favorite I guess?\n" +
+                      "2a. You could vote for the same song once as a favorite and once as a least favorite I guess?\n" +
                       "3. If you're having difficulty deciding, feel free to select the 'None' option (on the very top) instead.";
             
   form.addSectionHeaderItem()
