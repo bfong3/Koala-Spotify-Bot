@@ -6,7 +6,9 @@ export const HOS_FILE = 'src/Weekly Results/losers.txt'
 
 //Display specfic week details or sends entire file
 export const displayFileContents = async (interaction, commandName, currentWeek) => {
-    const selectedCategory = interaction.options.get('specify');
+    const fileName = (commandName === 'hall_of_fame') ? HOF_FILE : HOS_FILE;
+    sendEntireFile(interaction, fileName);
+    /*const selectedCategory = interaction.options.get('specify');
     const fileName = (commandName === 'hall_of_fame') ? HOF_FILE : HOS_FILE;
     if (selectedCategory.value === 'all'){
         sendEntireFile(interaction, fileName);
@@ -17,7 +19,7 @@ export const displayFileContents = async (interaction, commandName, currentWeek)
         if(weekEntry != null){
             interaction.reply(`Here are the details for Week ${weekNumber}:\n${weekEntry}`);
         }
-    }
+    }*/
 };
 
 //Perform entry manipulation in selected file based on selected command. 

@@ -24,6 +24,9 @@ const DISCORD_ID_DICTIONARY = {
     '143083192159698944': { realName: 'Zhao', spotifyId: 'bb3amt8y4jl2pakk857soxwly' }
 };
 
+
+const BANNED_LIST = []; // Put Discord ID's in here. 
+
 let entirePlaylist;
 
 const client = new Client({intents: [
@@ -44,11 +47,15 @@ function getRules() {
     );
 }
 
-client.on('ready', async (c) => {
+async function update()  {
     const pulledPlaylist = await getPlaylistData();
     const currentWeek = utils.getCurrentWeek();
     await utils.updateStoredSongs(currentWeek, DISCORD_ID_DICTIONARY, pulledPlaylist); //Update with all songs added this week
     entirePlaylist = await utils.loadStoredSongs();
+}
+
+client.on('ready', async (c) => {
+    update();
     //console.log(entirePlaylist);
     console.log(`${c.user.tag} is ready.`);
 });
@@ -77,21 +84,10 @@ client.on('interactionCreate', async (interaction) =>{
     if(interaction.commandName === 'rules'){
         interaction.reply(getRules());
     }
-    /*
-    if(interaction.commandName === 'add_entry'){
-        const currentWeekNumber = utils.calculateCurrentWeek(DISCORD_ID_DICTIONARY, entirePlaylist);
-        const latestLoserDiscordID = await utils.getLatestDiscordID(interaction, "loser", currentWeekNumber, DISCORD_ID_DICTIONARY, currentWeekNumber); 
-        const specificWeekSongs = utils.songsFromSpecificWeek(currentWeekNumber, currentWeekNumber, latestLoserDiscordID, DISCORD_ID_DICTIONARY, entirePlaylist);
-        const confirmedSongs = await utils.displaySongsFromSpecificWeek(interaction, specificWeekSongs);
-        if(!confirmedSongs){
-            return;
-        }
-
-        const selectedWeek = interaction.options.get('week').value;
-        const selectedFile = interaction.options.get('file').value;
-        const selectedAction = interaction.options.get('action').value;
+    if(interaction.commandName === 'update'){
+        update();
+        interaction.reply("Songs successfully updated.");
     }
-        */
 })
 
 client.login(process.env.DISCORD_BOT_TOKEN);
