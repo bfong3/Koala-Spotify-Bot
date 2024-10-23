@@ -1,3 +1,4 @@
+import { messageLink } from 'discord.js';
 import { songsFromUser } from './storedSongsUtils.js';
 
 const convertSecondsToMinutes = (seconds) => {
@@ -79,21 +80,27 @@ export function printSongsFromUser(interaction, DISCORD_ID_DICTIONARY, entirePla
 function songsFromUserReplyMessage(realName, sortedList) {
     let replyMessage = `**Songs from ${realName}:**\n`;
     replyMessage += "```"; 
-    replyMessage += `| No. | Song Title                                         | Date Added  | Song Popularity |\n`;
-    replyMessage += `| --- | -------------------------------------------------- | ----------- | --------------- |\n`;
+    // replyMessage += `| No. | Song Title                                         | Date Added  | Song Popularity |\n`;
+    // replyMessage += `| --- | -------------------------------------------------- | ----------- | --------------- |\n`;
 
     sortedList.forEach((entry, index) => {
-        let song_name = entry.track.name;
+        let songName = entry.track.name;
         const dateAdded = entry.added_at; 
+        const artists = entry.track.artists.map(artist => artist.name).join(', ');
         const formattedDate = new Date(dateAdded).toLocaleDateString(); // Format the date
         const songPopularity = entry.track.popularity;
+        const spaces = index + 1 < 10 ? '   ' : '    ';
 
-        const maxTitleLength = 47; //Adjust to whatever cutoff you want 
-        if (song_name.length > maxTitleLength) {
-            song_name = song_name.slice(0, maxTitleLength - 3) + '...';
-        }
+        replyMessage += `${index + 1}. ${songName}\n`;
+        replyMessage += `${spaces}Artist(s): ${artists}\n`;
+        replyMessage += `${spaces}Date Added: ${formattedDate}\n`;
+        replyMessage += `${spaces}Song Popularity: ${songPopularity}\n\n`;
+        // const maxTitleLength = 47; //Adjust to whatever cutoff you want 
+        // if (song_name.length > maxTitleLength) {
+        //     song_name = song_name.slice(0, maxTitleLength - 3) + '...';
+        // }
 
-        replyMessage += `| ${String(index + 1).padEnd(3)} | ${song_name.padEnd(50)} | ${formattedDate.padEnd(11)} | ${songPopularity.toString().padEnd(15)} |\n`;
+        //replyMessage += `| ${String(index + 1).padEnd(3)} | ${song_name.padEnd(50)} | ${formattedDate.padEnd(11)} | ${songPopularity.toString().padEnd(15)} |\n`;
     });
 
     replyMessage += "```";
