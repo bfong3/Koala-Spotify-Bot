@@ -20,7 +20,10 @@
             },
             "added_at": "2024-10-02T03:04:43Z"
           },
-          "vote": false
+          "vote": {
+            "winner": false,
+            "loser": true
+          }
         },
         {
           "song": {
@@ -43,7 +46,10 @@
             },
             "added_at": "2024-10-02T03:08:42Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -63,7 +69,10 @@
             },
             "added_at": "2024-10-02T23:14:44Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         }
       ],
       [
@@ -84,6 +93,59 @@
               "id": "hvusf4hnl8efw64698yoaiiar"
             },
             "added_at": "2024-10-09T18:49:29Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Jakubi"
+                }
+              ],
+              "duration_ms": 195188,
+              "name": "Couch Potato",
+              "uri": "spotify:track:4wFzDwH40XrQL067ETa9wy",
+              "popularity": 46
+            },
+            "added_by": {
+              "id": "hvusf4hnl8efw64698yoaiiar"
+            },
+            "added_at": "2024-10-16T03:04:08Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "ROSÉ"
+                },
+                {
+                  "name": "Bruno Mars"
+                }
+              ],
+              "duration_ms": 169917,
+              "name": "APT.",
+              "uri": "spotify:track:5vNRhkKd0yEAg8suGBpjeY",
+              "popularity": 88
+            },
+            "added_by": {
+              "id": "hvusf4hnl8efw64698yoaiiar"
+            },
+            "added_at": "2024-10-22T07:18:31Z"
           },
           "vote": null
         }
@@ -111,7 +173,10 @@
             },
             "added_at": "2024-10-02T01:01:44Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -134,7 +199,10 @@
             },
             "added_at": "2024-10-02T03:25:18Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -154,7 +222,10 @@
             },
             "added_at": "2024-10-02T03:25:25Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         }
       ],
       [
@@ -175,6 +246,59 @@
               "id": "wolfhunter76"
             },
             "added_at": "2024-10-09T20:57:43Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "keshi"
+                }
+              ],
+              "duration_ms": 193373,
+              "name": "War With Heaven",
+              "uri": "spotify:track:14gmLQPNYokqB8OKxAp69f",
+              "popularity": 56
+            },
+            "added_by": {
+              "id": "wolfhunter76"
+            },
+            "added_at": "2024-10-16T03:40:41Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "88rising"
+                },
+                {
+                  "name": "BIBI"
+                }
+              ],
+              "duration_ms": 167661,
+              "name": "The Weekend",
+              "uri": "spotify:track:0v2Qgk39gLXMIJi6BY34Fz",
+              "popularity": 63
+            },
+            "added_by": {
+              "id": "wolfhunter76"
+            },
+            "added_at": "2024-10-22T20:59:14Z"
           },
           "vote": null
         }
@@ -208,7 +332,10 @@
             },
             "added_at": "2024-10-02T02:56:42Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -237,7 +364,10 @@
             },
             "added_at": "2024-10-02T02:56:48Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -260,7 +390,10 @@
             },
             "added_at": "2024-10-02T02:55:24Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         }
       ],
       [
@@ -291,6 +424,62 @@
             },
             "added_at": "2024-10-09T03:52:10Z"
           },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "LANNÉ"
+                },
+                {
+                  "name": "Blaze U"
+                },
+                {
+                  "name": "Charles B"
+                }
+              ],
+              "duration_ms": 115172,
+              "name": "Winter (The Four Seasons) - Techno Mix",
+              "uri": "spotify:track:3UPltDNDxsC4rot0fJwBjv",
+              "popularity": 50
+            },
+            "added_by": {
+              "id": "21wwnjg7kgtxz2utci2gjjcea"
+            },
+            "added_at": "2024-10-15T20:09:19Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": true
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Aries"
+                }
+              ],
+              "duration_ms": 180789,
+              "name": "SAYONARA",
+              "uri": "spotify:track:7JQ9ELsV3FucPDWl0qjihX",
+              "popularity": 37
+            },
+            "added_by": {
+              "id": "21wwnjg7kgtxz2utci2gjjcea"
+            },
+            "added_at": "2024-10-23T02:13:05Z"
+          },
           "vote": null
         }
       ]
@@ -317,7 +506,10 @@
             },
             "added_at": "2024-10-02T00:31:22Z"
           },
-          "vote": true
+          "vote": {
+            "winner": true,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -340,7 +532,10 @@
             },
             "added_at": "2024-10-02T02:23:36Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -363,7 +558,10 @@
             },
             "added_at": "2024-10-02T02:33:10Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         }
       ],
       [
@@ -388,7 +586,10 @@
             },
             "added_at": "2024-10-09T03:47:16Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -410,6 +611,56 @@
               "id": "ymsah78fe0gdg36j00seehr98"
             },
             "added_at": "2024-10-09T04:26:40Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Adele"
+                }
+              ],
+              "duration_ms": 286480,
+              "name": "Skyfall",
+              "uri": "spotify:track:6VObnIkLVruX4UVyxWhlqm",
+              "popularity": 84
+            },
+            "added_by": {
+              "id": "ymsah78fe0gdg36j00seehr98"
+            },
+            "added_at": "2024-10-17T04:51:51Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Tory Lanez"
+                }
+              ],
+              "duration_ms": 193993,
+              "name": "Lady Of Namek",
+              "uri": "spotify:track:6ieWL5CLN9WdC875guWtMe",
+              "popularity": 70
+            },
+            "added_by": {
+              "id": "ymsah78fe0gdg36j00seehr98"
+            },
+            "added_at": "2024-10-22T07:57:34Z"
           },
           "vote": null
         }
@@ -440,7 +691,10 @@
             },
             "added_at": "2024-10-02T03:35:25Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -463,7 +717,10 @@
             },
             "added_at": "2024-10-02T03:38:50Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -483,7 +740,10 @@
             },
             "added_at": "2024-10-02T03:39:02Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         }
       ],
       [
@@ -504,6 +764,59 @@
               "id": "22cytkqxyrwww2wrj3y6f7xpq"
             },
             "added_at": "2024-10-09T03:45:45Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "All Time Low"
+                },
+                {
+                  "name": "blackbear"
+                }
+              ],
+              "duration_ms": 174067,
+              "name": "Monsters (feat. blackbear)",
+              "uri": "spotify:track:0tyR7Bu9P086aWBFZ4QJoo",
+              "popularity": 69
+            },
+            "added_by": {
+              "id": "22cytkqxyrwww2wrj3y6f7xpq"
+            },
+            "added_at": "2024-10-16T00:27:03Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "All Time Low"
+                }
+              ],
+              "duration_ms": 182826,
+              "name": "Dear Maria, Count Me In",
+              "uri": "spotify:track:0JJP0IS4w0fJx01EcrfkDe",
+              "popularity": 75
+            },
+            "added_by": {
+              "id": "22cytkqxyrwww2wrj3y6f7xpq"
+            },
+            "added_at": "2024-10-22T17:38:21Z"
           },
           "vote": null
         }
@@ -534,7 +847,10 @@
             },
             "added_at": "2024-10-02T01:20:28Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -557,7 +873,10 @@
             },
             "added_at": "2024-10-02T02:34:31Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -577,7 +896,10 @@
             },
             "added_at": "2024-10-02T02:34:49Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         }
       ],
       [
@@ -601,6 +923,59 @@
               "id": "oglenny"
             },
             "added_at": "2024-10-09T03:51:08Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "DPR IAN"
+                }
+              ],
+              "duration_ms": 189946,
+              "name": "Ballroom Extravaganza",
+              "uri": "spotify:track:4vJfBno2d0mTjMcYn5lEln",
+              "popularity": 60
+            },
+            "added_by": {
+              "id": "oglenny"
+            },
+            "added_at": "2024-10-16T01:04:07Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "DEAN"
+                },
+                {
+                  "name": "Gaeko"
+                }
+              ],
+              "duration_ms": 229359,
+              "name": "D (Half Moon)",
+              "uri": "spotify:track:3uA8SjMyDtwtt0jLPMQbVD",
+              "popularity": 59
+            },
+            "added_by": {
+              "id": "oglenny"
+            },
+            "added_at": "2024-10-22T22:38:38Z"
           },
           "vote": null
         }
@@ -631,7 +1006,10 @@
             },
             "added_at": "2024-10-02T01:55:48Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": true
+          }
         },
         {
           "song": {
@@ -654,7 +1032,10 @@
             },
             "added_at": "2024-10-02T02:23:32Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -677,7 +1058,10 @@
             },
             "added_at": "2024-10-02T02:51:43Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         }
       ],
       [
@@ -701,6 +1085,56 @@
               "id": "franklinsss121"
             },
             "added_at": "2024-10-09T04:55:11Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Kesha"
+                }
+              ],
+              "duration_ms": 211920,
+              "name": "Die Young",
+              "uri": "spotify:track:7EQGXaVSyEDsCWKmUcfpLk",
+              "popularity": 77
+            },
+            "added_by": {
+              "id": "franklinsss121"
+            },
+            "added_at": "2024-10-15T07:51:50Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Justin Timberlake"
+                }
+              ],
+              "duration_ms": 484146,
+              "name": "Mirrors",
+              "uri": "spotify:track:4rHZZAmHpZrA3iH5zx8frV",
+              "popularity": 79
+            },
+            "added_by": {
+              "id": "franklinsss121"
+            },
+            "added_at": "2024-10-22T07:28:25Z"
           },
           "vote": null
         }
@@ -728,7 +1162,10 @@
             },
             "added_at": "2024-10-02T00:38:36Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -751,7 +1188,10 @@
             },
             "added_at": "2024-10-02T02:22:21Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -774,7 +1214,10 @@
             },
             "added_at": "2024-10-02T02:22:34Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         }
       ],
       [
@@ -795,6 +1238,85 @@
               "id": "12171960076"
             },
             "added_at": "2024-10-09T04:04:29Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "DPR IAN"
+                },
+                {
+                  "name": "DPR LIVE"
+                },
+                {
+                  "name": "CL"
+                }
+              ],
+              "duration_ms": 185106,
+              "name": "No Blueberries",
+              "uri": "spotify:track:4lpvCG7eNzHAXwvMxWUNjz",
+              "popularity": 62
+            },
+            "added_by": {
+              "id": "12171960076"
+            },
+            "added_at": "2024-10-16T00:25:04Z"
+          },
+          "vote": {
+            "winner": true,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Daft Punk"
+                },
+                {
+                  "name": "Julian Casablancas"
+                }
+              ],
+              "duration_ms": 337560,
+              "name": "Instant Crush (feat. Julian Casablancas)",
+              "uri": "spotify:track:2cGxRwrMyEAp8dEbuZaVv6",
+              "popularity": 75
+            },
+            "added_by": {
+              "id": "12171960076"
+            },
+            "added_at": "2024-10-22T07:59:42Z"
+          },
+          "vote": null
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Eason Chan"
+                }
+              ],
+              "duration_ms": 259133,
+              "name": "富士山下",
+              "uri": "spotify:track:3cthRwQ2X0SNTaauD7tjn5",
+              "popularity": 57
+            },
+            "added_by": {
+              "id": "12171960076"
+            },
+            "added_at": "2024-10-22T08:05:10Z"
           },
           "vote": null
         }
@@ -828,7 +1350,10 @@
             },
             "added_at": "2024-10-02T00:36:10Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -851,7 +1376,10 @@
             },
             "added_at": "2024-10-02T02:23:27Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -871,7 +1399,10 @@
             },
             "added_at": "2024-10-02T02:42:24Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         }
       ],
       [
@@ -892,6 +1423,59 @@
               "id": "12166240208"
             },
             "added_at": "2024-10-09T03:50:00Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Maeta"
+                },
+                {
+                  "name": "Buddy"
+                }
+              ],
+              "duration_ms": 250362,
+              "name": "Teen Scene (ft. Buddy)",
+              "uri": "spotify:track:3cyw3MYxhpCSPMawfqdFNk",
+              "popularity": 43
+            },
+            "added_by": {
+              "id": "12166240208"
+            },
+            "added_at": "2024-10-16T01:06:24Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Paris Texas"
+                }
+              ],
+              "duration_ms": 244000,
+              "name": "FORCE OF HABIT",
+              "uri": "spotify:track:41fJZ1doa6iEWbL3CNS7pQ",
+              "popularity": 26
+            },
+            "added_by": {
+              "id": "12166240208"
+            },
+            "added_at": "2024-10-23T04:05:04Z"
           },
           "vote": null
         }
@@ -919,7 +1503,10 @@
             },
             "added_at": "2024-10-02T00:55:39Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -939,7 +1526,10 @@
             },
             "added_at": "2024-10-02T09:11:55Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -962,7 +1552,10 @@
             },
             "added_at": "2024-10-02T09:16:24Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         }
       ],
       [
@@ -983,6 +1576,59 @@
               "id": "yqzwz048uvd4wimtoyy74bd57"
             },
             "added_at": "2024-10-09T08:49:23Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Tritonal"
+                },
+                {
+                  "name": "Unlike Pluto"
+                }
+              ],
+              "duration_ms": 197142,
+              "name": "Anchor - Unlike Pluto Remix",
+              "uri": "spotify:track:3SYbX6p0U4zIeZQXPSknbx",
+              "popularity": 14
+            },
+            "added_by": {
+              "id": "yqzwz048uvd4wimtoyy74bd57"
+            },
+            "added_at": "2024-10-16T00:23:01Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Origami Angel"
+                }
+              ],
+              "duration_ms": 171854,
+              "name": "Fruit Wine",
+              "uri": "spotify:track:3NGpIrN7E9bJsPjytoe7fj",
+              "popularity": 41
+            },
+            "added_by": {
+              "id": "yqzwz048uvd4wimtoyy74bd57"
+            },
+            "added_at": "2024-10-22T23:50:42Z"
           },
           "vote": null
         }
@@ -1016,7 +1662,10 @@
             },
             "added_at": "2024-10-02T02:02:34Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -1036,7 +1685,10 @@
             },
             "added_at": "2024-10-02T03:45:14Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -1059,7 +1711,10 @@
             },
             "added_at": "2024-10-02T03:46:45Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         }
       ],
       [
@@ -1080,6 +1735,79 @@
               "id": "22ykd3a2sxif3tudh2rhn7nhy"
             },
             "added_at": "2024-10-10T06:50:10Z"
+          },
+          "vote": {
+            "winner": true,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Katy Perry"
+                }
+              ],
+              "duration_ms": 227880,
+              "name": "Firework",
+              "uri": "spotify:track:4lCv7b86sLynZbXhfScfm2",
+              "popularity": 69
+            },
+            "added_by": {
+              "id": "22ykd3a2sxif3tudh2rhn7nhy"
+            },
+            "added_at": "2024-10-16T22:14:01Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        },
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Tory Lanez"
+                }
+              ],
+              "duration_ms": 228640,
+              "name": "LUV",
+              "uri": "spotify:track:16Ah4QqH4mgYVXqfC4mdSd",
+              "popularity": 67
+            },
+            "added_by": {
+              "id": "22ykd3a2sxif3tudh2rhn7nhy"
+            },
+            "added_at": "2024-10-16T22:17:10Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "One Direction"
+                }
+              ],
+              "duration_ms": 245493,
+              "name": "Story of My Life",
+              "uri": "spotify:track:4nVBt6MZDDP6tRVdQTgxJg",
+              "popularity": 86
+            },
+            "added_by": {
+              "id": "22ykd3a2sxif3tudh2rhn7nhy"
+            },
+            "added_at": "2024-10-22T12:21:40Z"
           },
           "vote": null
         }
@@ -1107,7 +1835,10 @@
             },
             "added_at": "2024-10-02T03:26:40Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -1127,7 +1858,10 @@
             },
             "added_at": "2024-10-02T03:27:07Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -1147,7 +1881,10 @@
             },
             "added_at": "2024-10-02T03:28:54Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         }
       ],
       [
@@ -1175,6 +1912,59 @@
             },
             "added_at": "2024-10-10T03:02:24Z"
           },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "grentperez"
+                }
+              ],
+              "duration_ms": 186432,
+              "name": "Wishful Thinking",
+              "uri": "spotify:track:0eM1lELK39bi6UgbqdRCAz",
+              "popularity": 53
+            },
+            "added_by": {
+              "id": "22vfgrxvdndvgnyz7bj5zv4di"
+            },
+            "added_at": "2024-10-15T18:48:13Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Fashion Jackson"
+                },
+                {
+                  "name": "JARA"
+                }
+              ],
+              "duration_ms": 375194,
+              "name": "Cinnamon Burn (feat. JARA)",
+              "uri": "spotify:track:7fYZUkpi7yFZxkAl8WKjJN",
+              "popularity": 28
+            },
+            "added_by": {
+              "id": "22vfgrxvdndvgnyz7bj5zv4di"
+            },
+            "added_at": "2024-10-23T00:18:23Z"
+          },
           "vote": null
         }
       ]
@@ -1201,7 +1991,10 @@
             },
             "added_at": "2024-10-02T01:16:53Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -1221,7 +2014,10 @@
             },
             "added_at": "2024-10-02T06:11:23Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -1244,7 +2040,10 @@
             },
             "added_at": "2024-10-02T06:14:27Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         }
       ],
       [
@@ -1268,6 +2067,56 @@
               "id": "fax416ds7nujqx58lirt8yz3j"
             },
             "added_at": "2024-10-09T03:57:18Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Tems"
+                }
+              ],
+              "duration_ms": 178041,
+              "name": "Love Me JeJe",
+              "uri": "spotify:track:47hsUYxvbTlBAN3sP9dEOd",
+              "popularity": 69
+            },
+            "added_by": {
+              "id": "fax416ds7nujqx58lirt8yz3j"
+            },
+            "added_at": "2024-10-16T02:19:50Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Lil Uzi Vert"
+                }
+              ],
+              "duration_ms": 220586,
+              "name": "20 Min",
+              "uri": "spotify:track:0uxSUdBrJy9Un0EYoBowng",
+              "popularity": 82
+            },
+            "added_by": {
+              "id": "fax416ds7nujqx58lirt8yz3j"
+            },
+            "added_at": "2024-10-22T16:56:28Z"
           },
           "vote": null
         }
@@ -1295,7 +2144,10 @@
             },
             "added_at": "2024-10-02T23:20:59Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -1315,7 +2167,10 @@
             },
             "added_at": "2024-10-02T23:21:10Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -1335,7 +2190,10 @@
             },
             "added_at": "2024-10-02T23:23:43Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         }
       ],
       [
@@ -1356,6 +2214,56 @@
               "id": "1265167543"
             },
             "added_at": "2024-10-10T22:04:51Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Paramore"
+                }
+              ],
+              "duration_ms": 216013,
+              "name": "Still into You",
+              "uri": "spotify:track:3SXXFIZel1VQQ4ENiqozxi",
+              "popularity": 59
+            },
+            "added_by": {
+              "id": "1265167543"
+            },
+            "added_at": "2024-10-17T04:04:16Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Stuck In Your Radio"
+                }
+              ],
+              "duration_ms": 180695,
+              "name": "S.I.Y.R.",
+              "uri": "spotify:track:37FzrpeunjQYmm3oVZJSEo",
+              "popularity": 22
+            },
+            "added_by": {
+              "id": "1265167543"
+            },
+            "added_at": "2024-10-23T06:13:33Z"
           },
           "vote": null
         }
@@ -1383,7 +2291,10 @@
             },
             "added_at": "2024-10-02T05:24:39Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -1412,7 +2323,10 @@
             },
             "added_at": "2024-10-02T05:25:10Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -1432,7 +2346,10 @@
             },
             "added_at": "2024-10-02T05:31:03Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         }
       ],
       [
@@ -1453,6 +2370,62 @@
               "id": "1245414659"
             },
             "added_at": "2024-10-09T05:12:14Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Alina Baraz"
+                },
+                {
+                  "name": "filous"
+                },
+                {
+                  "name": "Khalid"
+                }
+              ],
+              "duration_ms": 200865,
+              "name": "Floating (feat. Khalid) [filous Remix]",
+              "uri": "spotify:track:4PlbUZ7l0HPZFcTf31hrkt",
+              "popularity": 54
+            },
+            "added_by": {
+              "id": "1245414659"
+            },
+            "added_at": "2024-10-15T21:11:19Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "The Weeknd"
+                }
+              ],
+              "duration_ms": 260253,
+              "name": "Die For You",
+              "uri": "spotify:track:2LBqCSwhJGcFQeTHMVGwy3",
+              "popularity": 84
+            },
+            "added_by": {
+              "id": "1245414659"
+            },
+            "added_at": "2024-10-22T08:16:51Z"
           },
           "vote": null
         }
@@ -1480,7 +2453,10 @@
             },
             "added_at": "2024-10-03T04:21:54Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -1500,7 +2476,10 @@
             },
             "added_at": "2024-10-03T04:22:03Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         },
         {
           "song": {
@@ -1523,7 +2502,10 @@
             },
             "added_at": "2024-10-03T04:22:33Z"
           },
-          "vote": null
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
         }
       ],
       [
@@ -1547,6 +2529,62 @@
               "id": "bb3amt8y4jl2pakk857soxwly"
             },
             "added_at": "2024-10-09T03:54:24Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "Yel"
+                }
+              ],
+              "duration_ms": 184000,
+              "name": "About Last Night..",
+              "uri": "spotify:track:337iXj4y5t06TzMw4kEBvG",
+              "popularity": 58
+            },
+            "added_by": {
+              "id": "bb3amt8y4jl2pakk857soxwly"
+            },
+            "added_at": "2024-10-15T15:38:08Z"
+          },
+          "vote": {
+            "winner": false,
+            "loser": false
+          }
+        }
+      ],
+      [
+        {
+          "song": {
+            "track": {
+              "artists": [
+                {
+                  "name": "嘿人李逵Noisemakers"
+                },
+                {
+                  "name": "YUAN"
+                },
+                {
+                  "name": "Nudnik"
+                }
+              ],
+              "duration_ms": 159130,
+              "name": "小雨天气",
+              "uri": "spotify:track:16UoVGRVnVdB2aEHpcSNvo",
+              "popularity": 49
+            },
+            "added_by": {
+              "id": "bb3amt8y4jl2pakk857soxwly"
+            },
+            "added_at": "2024-10-22T20:44:42Z"
           },
           "vote": null
         }
