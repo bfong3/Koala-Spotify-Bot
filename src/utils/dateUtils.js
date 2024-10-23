@@ -1,4 +1,4 @@
-const FIRST_DAY = '2024-10-01T08:00:00Z';
+const FIRST_DAY = '2024-10-01T07:00:00Z'; // BEWARE OF DAYLIGHT SAVINGS will either be 07:00:00 or 08:00:00 (for PST)
 
 
 export const getCurrentWeek = () => {
