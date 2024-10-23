@@ -99,7 +99,7 @@ export const createStoredSongs = async (DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST) 
                 userEntry.songs.push([]);
             }
 
-            const entry = {song: userSongs[i], vote: null};
+            const entry = {song: userSongs[i], vote: {winner: false, loser: false}};
             userEntry.songs[index].push(entry);
         }
         storedSongs[discordID] = userEntry;
@@ -141,16 +141,24 @@ export const updateStoredSongs = async (weekNumber, DISCORD_ID_DICTIONARY, ENTIR
 }
 
 const updateSongVote = (userWeekSongs, songTitle, voteResult) => {
+    let songFound = false;
     for (let j = 0; j < userWeekSongs.length; j++) {
         if (userWeekSongs[j].song.track.name === songTitle) {
-            userWeekSongs[j].vote = voteResult;
-            return true; // Indicate that the song was found and updated
+            if (voteResult === true){
+                userWeekSongs[j].vote.winner = true; 
+            } else {
+                userWeekSongs[j].vote.loser = true; 
+            }
+            // console.log(userWeekSongs[j].song.track.name);
+            // console.log(userWeekSongs[j].vote);
+            songFound = true;
+            break;
         }
     }
-    return false;
+    return { userWeekSongs, songFound };
 };
 
-//true =  HOF, false = HOS 
+//true =  winner, false = loser 
 //Winner has to be from the latest week, but loser can be from any week
 export const enterVoteResult = async (winnerDiscordID, winnerSongTitle, loserDiscordID, loserSongTitle) => {
     let storedSongs = await loadStoredSongs();
@@ -159,13 +167,18 @@ export const enterVoteResult = async (winnerDiscordID, winnerSongTitle, loserDis
 
     for (let i = 0; i < winnerUserSongs.length; i++) {
         let winnerUserWeekSongs = winnerUserSongs[i]; // Array of songs from one week
-        if (updateSongVote(winnerUserWeekSongs, winnerSongTitle, true)) {
+        const { userWeekSongs, songFound } = updateSongVote(winnerUserWeekSongs, winnerSongTitle, true);
+        if (songFound) {
+            storedSongs[winnerDiscordID].songs[i] = userWeekSongs; // Update storedSongs with updated week songs
             break; 
         }
     }
+
     for (let i = 0; i < loserUserSongs.length; i++) {
         let loserUserWeekSongs = loserUserSongs[i]; // Array of songs from one week
-        if (updateSongVote(loserUserWeekSongs, loserSongTitle, false)) {
+        const { userWeekSongs, songFound } = updateSongVote(loserUserWeekSongs, loserSongTitle, false);
+        if (songFound) {
+            storedSongs[loserDiscordID].songs[i] = userWeekSongs; // Update storedSongs with updated week songs
             break; 
         }
     }
