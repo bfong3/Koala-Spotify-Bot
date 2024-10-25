@@ -1,7 +1,8 @@
 import dotenv from 'dotenv'; 
 import * as utils from './utils/index.js';
+import { exportSongs } from './Google Forms/index.js'
 import { getPlaylistData } from './Spotify Code/app.js';
-import { Client, IntentsBitField, Events, InteractionType } from 'discord.js';
+import { Client, IntentsBitField } from 'discord.js';
 
 dotenv.config();
 
@@ -24,9 +25,6 @@ const DISCORD_ID_DICTIONARY = {
     '143083192159698944': { realName: 'Zhao', spotifyId: 'bb3amt8y4jl2pakk857soxwly' }
 };
 
-
-const BANNED_LIST = []; // Put Discord ID's in here. 
-
 let entirePlaylist;
 
 const client = new Client({intents: [
@@ -47,11 +45,23 @@ function getRules() {
     );
 }
 
+function help() {
+    return (
+        "**/leaderboards <category>**: Display leaderboard for selected category.\n" +
+        "**/songs <user>**: Shows all added songs from the user.\n" + 
+        "**/missing**: Check who hasn't added their songs for this week.\n" + 
+        "**/rules**: Our server's rules for adding/voting songs.\n" +
+        "**/update**: Updates bot with any changes from the Spotify Playlist.\n" +
+        "**/week <number> **: Shows all songs from specified week."
+    );
+}
+
 async function update()  {
     const pulledPlaylist = await getPlaylistData();
     const currentWeek = utils.getCurrentWeek();
     await utils.updateStoredSongs(currentWeek, DISCORD_ID_DICTIONARY, pulledPlaylist); //Update with all songs added this week
     entirePlaylist = await utils.loadStoredSongs();
+    exportSongs(); // For Google Forms 
 }
 
 client.on('ready', async (c) => {
@@ -64,29 +74,45 @@ client.on('interactionCreate', async (interaction) =>{
     //console.log("Interaction received:", interaction);
     if(!interaction.isChatInputCommand()) return;
 
-    if(interaction.commandName === 'songs'){
-        utils.printSongsFromUser(interaction, DISCORD_ID_DICTIONARY, entirePlaylist);
-    }
-    if (interaction.commandName === 'leaderboards') {
-        const selectedCategory = interaction.options.get('category').value;
-        const categorizedSongs = utils.sortedByCategorySongs(selectedCategory, DISCORD_ID_DICTIONARY, entirePlaylist);
-        await utils.displayLeaderboard(interaction, selectedCategory, categorizedSongs);
-    }
-    if(interaction.commandName === 'hall_of_fame' || interaction.commandName === 'hall_of_shame'){
-        const currentWeekNumber = utils.getCurrentWeek();
-        utils.displayFileContents(interaction, interaction.commandName, currentWeekNumber);
-    }
-    if(interaction.commandName === 'missing'){
-        const currentWeekNumber = utils.getCurrentWeek();
-        const latestWinnerDiscordID = await utils.getLatestDiscordID(interaction, "winner", currentWeekNumber - 1, DISCORD_ID_DICTIONARY, currentWeekNumber);
-        utils.replyAllMissingSongs(interaction, latestWinnerDiscordID, currentWeekNumber, DISCORD_ID_DICTIONARY, entirePlaylist);
-    }
-    if(interaction.commandName === 'rules'){
-        interaction.reply(getRules());
-    }
-    if(interaction.commandName === 'update'){
-        update();
-        interaction.reply("Songs successfully updated.");
+    switch (interaction.commandName) {
+        case 'songs':
+            await utils.printSongsFromUser(interaction, DISCORD_ID_DICTIONARY, entirePlaylist);
+            break;
+    
+        case 'leaderboards':
+            const leaderboard = utils.displayLeaderboard(interaction, DISCORD_ID_DICTIONARY, entirePlaylist);
+            await interaction.reply(leaderboard);
+            break;
+    
+        case 'hall_of_fame':
+        case 'hall_of_shame':
+            const file = await utils.getFileContents(interaction.commandName);
+            await interaction.reply({ files: [file] });
+            break;
+        
+        case 'help':
+            await interaction.reply(help());  
+            break;
+
+        case 'rules':
+            await interaction.reply(getRules());
+            break;
+    
+        case 'missing':
+            const currentWeekNumber = utils.getCurrentWeek();
+            const latestWinnerDiscordID = await utils.getDiscordID(interaction, "winner", currentWeekNumber - 1, DISCORD_ID_DICTIONARY, currentWeekNumber);
+            utils.replyAllMissingSongs(interaction, latestWinnerDiscordID, currentWeekNumber, DISCORD_ID_DICTIONARY, entirePlaylist);
+            break;
+    
+        case 'update':
+            update();
+            await interaction.reply("Songs successfully updated.");
+            break;
+    
+        case 'week':
+            const weekNumber = interaction.options.getNumber('week_number'); 
+            await utils.printSongsFromWeek(interaction, DISCORD_ID_DICTIONARY, entirePlaylist, weekNumber);
+            break;
     }
 })
 

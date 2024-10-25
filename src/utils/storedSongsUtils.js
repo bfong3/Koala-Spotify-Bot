@@ -127,7 +127,7 @@ export const updateStoredSongs = async (weekNumber, DISCORD_ID_DICTIONARY, ENTIR
             const songWeekNumber = getWeekNumber(dateAdded);
             const index = songWeekNumber - 1;
             if(songWeekNumber === weekNumber){
-                const entry = {song: userSongs[i], vote: null};
+                const entry = {song: userSongs[i], vote: {winner: false, loser: false}};
                 storedSongs[discordID].songs[index].push(entry);
             }
         }
@@ -195,33 +195,39 @@ export const enterVoteResult = async (winnerDiscordID, winnerSongTitle, loserDis
 //---------------------------------------------------------------------------------------------------------------------
 
 //THIS ONE SORTS BASED ON MY DATA STRUCT (USE THIS ONE)
-export const songsFromUser = (discordID, entirePlaylist) => {
+export const songsFromUser = (discordID, entirePlaylist, vote) => {
     let userSongs = [];
     let userData = entirePlaylist[discordID];
     for(let i = 0; i < userData.songs.length; i++){
         let weeklyUserSongs = userData.songs[i];
         for(let j = 0; j < weeklyUserSongs.length; j++){
-            if(weeklyUserSongs[j].vote === false){ //Song was voted out from the playlist
-                continue;
-            }
-            //console.log(weeklyUserSongs[j].vote);
-            userSongs.push(weeklyUserSongs[j].song);
+            if(vote){
+                userSongs.push(weeklyUserSongs[j]);
+            } else{
+                if(weeklyUserSongs[j].vote.loser === true){ //Song was voted out from the playlist
+                    continue;
+                }
+                userSongs.push(weeklyUserSongs[j].song);
+            } 
         }
     }
     return userSongs;
 };
 
-
-export const getSpecificWeekSongs = (entirePlaylist, weekNumber) => {
+export const getSpecificWeekSongs = (entirePlaylist, weekNumber, vote) => {
     let latestSongs = [];
     const index = weekNumber - 1;
     for (const discordID in entirePlaylist){
         const userWeeklySongs = entirePlaylist[discordID].songs[index];
-        for(let i = 0; i < userWeeklySongs.length; i++){
-            if(userWeeklySongs.vote === false){
-                continue;
+        for(let i = 0; i < userWeeklySongs.length; i++){          
+            if(vote){
+                latestSongs.push(userWeeklySongs[i]);
+            } else{
+                if(userWeeklySongs[i].vote.loser === true){
+                    continue;
+                }
+                latestSongs.push(userWeeklySongs[i].song);
             }
-            latestSongs.push(userWeeklySongs[i].song);
         }
     }
     return latestSongs;
@@ -230,7 +236,7 @@ export const getSpecificWeekSongs = (entirePlaylist, weekNumber) => {
 export const getAllSongs = (entirePlaylist) => {
     let allSongs = [];
     for (const discordID in entirePlaylist){
-        allSongs = allSongs.concat(songsFromUser(discordID, entirePlaylist));
+        allSongs = allSongs.concat(songsFromUser(discordID, entirePlaylist, false));
     }
     return allSongs;
 }
@@ -241,7 +247,7 @@ export const songTitlesAsArray = (entirePlaylist, weekNumber) => {
     if(weekNumber === null){
         requestedSongs = getAllSongs(entirePlaylist);
     } else{
-        requestedSongs = getSpecificWeekSongs(entirePlaylist, weekNumber);
+        requestedSongs = getSpecificWeekSongs(entirePlaylist, weekNumber, false);
     }
     for(let i = 0; i < requestedSongs.length; i++){
         returnedSongs.push(requestedSongs[i].track.name);

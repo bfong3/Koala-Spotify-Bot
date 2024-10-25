@@ -1,4 +1,3 @@
-import { messageLink } from 'discord.js';
 import { songsFromUser } from './storedSongsUtils.js';
 
 const convertSecondsToMinutes = (seconds) => {
@@ -19,12 +18,11 @@ const calculateAverage = (list, category) => {
     return parseFloat((total / list.length).toFixed(1));
 };
 
-
-export const sortedByCategorySongs = (category, DISCORD_ID_DICTIONARY, entirePlaylist) => {
+const sortedByCategorySongs = (category, DISCORD_ID_DICTIONARY, entirePlaylist) => {
     const categorizedSongs = [];
     for (const discordID in DISCORD_ID_DICTIONARY) {
         const realName = DISCORD_ID_DICTIONARY[discordID].realName;
-        const sortedList = songsFromUser(discordID, entirePlaylist);
+        const sortedList = songsFromUser(discordID, entirePlaylist, false);
         let score = 0; 
 
         // Handle different categories
@@ -60,54 +58,7 @@ export const sortedByCategorySongs = (category, DISCORD_ID_DICTIONARY, entirePla
     return categorizedSongs;
 };
 
-export function printSongsFromUser(interaction, DISCORD_ID_DICTIONARY, entirePlaylist) {
-    const userDetails = interaction.options.get('username');
-    const discordID = userDetails.user.id;
-
-    if (!DISCORD_ID_DICTIONARY.hasOwnProperty(discordID)) {
-        interaction.reply(`**${userDetails.user.username}** is not part of the Spotify playlist.\n`);
-        return;
-    }
-
-    const realName = DISCORD_ID_DICTIONARY[discordID].realName;
-    const sortedList = songsFromUser(discordID, entirePlaylist);
-    let replyMessage = songsFromUserReplyMessage(realName, sortedList);
-
-    interaction.reply(replyMessage);
-}
-
-//String for all the songs added by user
-function songsFromUserReplyMessage(realName, sortedList) {
-    let replyMessage = `**Songs from ${realName}:**\n`;
-    replyMessage += "```"; 
-    // replyMessage += `| No. | Song Title                                         | Date Added  | Song Popularity |\n`;
-    // replyMessage += `| --- | -------------------------------------------------- | ----------- | --------------- |\n`;
-
-    sortedList.forEach((entry, index) => {
-        let songName = entry.track.name;
-        const dateAdded = entry.added_at; 
-        const artists = entry.track.artists.map(artist => artist.name).join(', ');
-        const formattedDate = new Date(dateAdded).toLocaleDateString(); // Format the date
-        const songPopularity = entry.track.popularity;
-        const spaces = index + 1 < 10 ? '   ' : '    ';
-
-        replyMessage += `${index + 1}. ${songName}\n`;
-        replyMessage += `${spaces}Artist(s): ${artists}\n`;
-        replyMessage += `${spaces}Date Added: ${formattedDate}\n`;
-        replyMessage += `${spaces}Song Popularity: ${songPopularity}\n\n`;
-        // const maxTitleLength = 47; //Adjust to whatever cutoff you want 
-        // if (song_name.length > maxTitleLength) {
-        //     song_name = song_name.slice(0, maxTitleLength - 3) + '...';
-        // }
-
-        //replyMessage += `| ${String(index + 1).padEnd(3)} | ${song_name.padEnd(50)} | ${formattedDate.padEnd(11)} | ${songPopularity.toString().padEnd(15)} |\n`;
-    });
-
-    replyMessage += "```";
-    return replyMessage;
-}
-
-export const displayLeaderboard = async (interaction, option, categorizedSongs) => {
+const createLeaderboard = (option, categorizedSongs) => {
     let replyMessage = '';
 
     switch (option) {
@@ -146,5 +97,11 @@ export const displayLeaderboard = async (interaction, option, categorizedSongs) 
     }
 
     replyMessage += "```";
-    await interaction.reply(replyMessage);
+    return replyMessage;
 };
+
+export function displayLeaderboard(interaction, DISCORD_ID_DICTIONARY, entirePlaylist){
+    const selectedCategory = interaction.options.get('category').value;
+    const categorizedSongs = sortedByCategorySongs(selectedCategory, DISCORD_ID_DICTIONARY, entirePlaylist);
+    return createLeaderboard(selectedCategory, categorizedSongs);
+}

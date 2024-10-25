@@ -1,4 +1,3 @@
-import { getCurrentTuesdayMidnightPSTinUTC } from './dateUtils.js';
 import { getSpecificWeekSongs } from './storedSongsUtils.js';
 
 
@@ -33,10 +32,8 @@ export const weeklySongNamesAsArray = (interaction, winnerDiscordID, loserDiscor
 
 
 const checkThisWeekEntries = (interaction, winnerDiscordID, currentWeekNumber, DISCORD_ID_DICTIONARY, ENTIRE_PLAYLIST) => {
-    //const beginningOfWeek = new Date(getCurrentTuesdayMidnightPSTinUTC());
-    const songsThisWeek = getSpecificWeekSongs(ENTIRE_PLAYLIST, currentWeekNumber);
+    const songsThisWeek = getSpecificWeekSongs(ENTIRE_PLAYLIST, currentWeekNumber, false);
     const winnerSpotifyID = (currentWeekNumber != 1) ? DISCORD_ID_DICTIONARY[winnerDiscordID].spotifyId : null;
-    //const loserSpotifyID = (loserDiscordID != null) ? DISCORD_ID_DICTIONARY[loserDiscordID].spotifyId : null;
     
     let spotifyIdDictionary ={};
     for(let key in DISCORD_ID_DICTIONARY){

@@ -32,12 +32,10 @@ function writeToFile(filePath, currentWeek, thisWeeksSongTitles, allSongTitles) 
     });
 }
 
-async function main() {
+export async function exportSongs() {
     const allSongs = await loadStoredSongs();
     const thisWeeksSongTitles = songTitlesAsArray(allSongs, currentWeek);
     //console.log(thisWeeksSongTitles);
     const allSongTitles = songTitlesAsArray(allSongs, null);
     writeToFile(FILE_PATH ,currentWeek, thisWeeksSongTitles, allSongTitles);
 }
-
-main();

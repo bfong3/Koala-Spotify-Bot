@@ -49,10 +49,14 @@ const commands = [
             {
                 name: 'username',
                 description: 'the user',
-                type: ApplicationCommandOptionType.User, // Ensure this type is defined in your version
+                type: ApplicationCommandOptionType.User, 
                 required: true,
             },
         ],
+    },
+    {
+        name: 'help',
+        description: 'List of commands',
     },
     {
         name: 'missing',
@@ -65,6 +69,18 @@ const commands = [
     {
         name: 'update',
         description: 'Updates songs if added after bot turned on',
+    },
+    {
+        name: 'week',
+        description: 'Dispaly songs from specific week',
+        options: [
+            {
+                name: 'week_number',
+                description: 'week number',
+                type: ApplicationCommandOptionType.Number, 
+                required: true,
+            },
+        ],
     },
 ];
 
