@@ -3,6 +3,8 @@ import fetch from 'node-fetch';
 
 // Load environment variables from .env file
 dotenv.config();
+const TOKEN_URL = 'https://accounts.spotify.com/api/token';
+const PLAYLIST_ITEM_LIMIT = 100;
 
 const TOKEN_URL = 'https://accounts.spotify.com/api/token';
 const PLAYLIST_ITEM_LIMIT = 100;
